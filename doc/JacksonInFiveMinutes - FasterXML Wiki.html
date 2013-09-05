@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>JacksonInFiveMinutes - FasterXML Wiki</title>
+<script type="text/javascript" src="JacksonInFiveMinutes%20-%20FasterXML%20Wiki_files/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="JacksonInFiveMinutes%20-%20FasterXML%20Wiki_files/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="JacksonInFiveMinutes%20-%20FasterXML%20Wiki_files/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="JacksonInFiveMinutes%20-%20FasterXML%20Wiki_files/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="JacksonInFiveMinutes%20-%20FasterXML%20Wiki_files/projection.css">
+
+<!-- css only for MSIE browsers -->
+<!--[if IE]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static183/modern/css/msie.css">
+<![endif]-->
+
+
+
+
+
+<link rel="Start" href="http://wiki.fasterxml.com/Home">
+<link rel="Alternate" title="Wiki Markup" href="http://wiki.fasterxml.com/JacksonInFiveMinutes?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="http://wiki.fasterxml.com/JacksonInFiveMinutes?action=print">
+<link rel="Appendix" title="User.java" href="http://wiki.fasterxml.com/JacksonInFiveMinutes?action=AttachFile&amp;do=view&amp;target=User.java">
+<link rel="Search" href="http://wiki.fasterxml.com/FindPage">
+<link rel="Index" href="http://wiki.fasterxml.com/TitleIndex">
+<link rel="Glossary" href="http://wiki.fasterxml.com/WordIndex">
+<link rel="Help" href="http://wiki.fasterxml.com/HelpOnFormatting">
+</head>
+
+<body dir="ltr" lang="en">
+
+<div id="header">
+<div id="logo"><a href="http://wiki.fasterxml.com/Home"><img src="JacksonInFiveMinutes%20-%20FasterXML%20Wiki_files/fxml_logo_72_75.png" alt="FasterXML Logo"></a></div>
+
+<form id="searchform" method="get" action="/JacksonInFiveMinutes">
+<div>
+<input name="action" value="fullsearch" type="hidden">
+<input name="context" value="180" type="hidden">
+<label style="display: none;" for="searchinput">Search:</label>
+<input class="disabled" id="searchinput" name="value" value="Search" size="20" onfocus="searchFocus(this)" onblur="searchBlur(this)" onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search" type="text">
+<input disabled="disabled" id="titlesearch" name="titlesearch" value="Titles" alt="Search Titles" type="submit">
+<input disabled="disabled" id="fullsearch" name="fullsearch" value="Text" alt="Search Full Text" type="submit">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<ul id="username"><li><a href="http://wiki.fasterxml.com/JacksonInFiveMinutes?action=login" id="login" rel="nofollow">Login</a></li></ul>
+<div id="locationline">
+
+
+<ul id="pagelocation">
+<li><a class="backlink" href="http://wiki.fasterxml.com/JacksonInFiveMinutes?action=fullsearch&amp;context=180&amp;value=linkto%3A%22JacksonInFiveMinutes%22" rel="nofollow" title="Click to do a full-text search for this title">JacksonInFiveMinutes</a></li>
+</ul>
+
+</div>
+
+
+<ul id="navibar">
+<li class="wikilink"><a href="http://wiki.fasterxml.com/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="http://wiki.fasterxml.com/FindPage">FindPage</a></li><li class="wikilink"><a href="http://wiki.fasterxml.com/HelpContents">HelpContents</a></li><li class="current"><a href="http://wiki.fasterxml.com/JacksonInFiveMinutes">JacksonInFiveMinutes</a></li>
+</ul>
+
+<div id="pageline"><hr style="display:none;"></div>
+
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://wiki.fasterxml.com/JacksonInFiveMinutes?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://wiki.fasterxml.com/JacksonInFiveMinutes?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/JacksonInFiveMinutes">
+<div>
+    
+    <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option selected="selected" value="show">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="disabled" class="disabled">Rename Page</option>
+<option value="DeletePage" disabled="disabled" class="disabled">Delete Page</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Subscribe User</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Remove Spam</option>
+<option value="show" disabled="disabled" class="disabled">Revert to this revision</option>
+<option value="show" disabled="disabled" class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+
+<div id="page" dir="ltr" lang="en">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line862">Inspired by the quality and variety of XML tooling available for the Java platform (StAX, JAXB, etc.), the <a class="http" href="http://jackson.codehaus.org/">Jackson</a> is a multi-purpose Java library for processing <a class="http" href="http://json.org/">JSON</a>.  Jackson aims to be the best possible combination of fast, correct, lightweight, and ergonomic for developers. <span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span></p><p class="line874">This page gives an overview of Jackson's capabilities. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span></p><p class="line867"></p><div class="table-of-contents"><p class="table-of-contents-heading">Contents</p><ol><li>
+<a href="#JSON_Three_Ways">JSON Three Ways</a></li><li>
+<a href="#Examples">Examples</a><ol><li>
+<a href="#Full_Data_Binding_.28POJO.29_Example">Full Data Binding (POJO) Example</a></li><li>
+<a href="#A.22Raw.22_Data_Binding_Example">"Raw" Data Binding Example</a></li><li>
+<a href="#Data_Binding_with_Generics">Data Binding with Generics</a></li><li>
+<a href="#Tree_Model_Example">Tree Model Example</a></li><li>
+<a href="#Streaming_API_Example">Streaming API Example</a></li><li>
+<a href="#Streaming_API_Example_2:_arrays">Streaming API Example 2: arrays</a></li><li>
+<a href="#Next_Steps">Next Steps</a></li></ol></li></ol></div> <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line867">
+</p><h2 id="JSON_Three_Ways">JSON Three Ways</h2>
+<span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><p class="line874">Jackson offers three alternative methods (one with two variants) for processing JSON: <span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span></p><ul><li><p class="line891"><a href="http://wiki.fasterxml.com/JacksonStreamingApi">Streaming API</a> (aka "Incremental parsing/generation") reads and writes JSON content as discrete events. <span class="anchor" id="line-12"></span></p><ul><li><p class="line891"><tt>org.codehaus.jackson</tt>.<a href="http://wiki.fasterxml.com/JsonParser">JsonParser</a> reads, <tt>org.codehaus.jackson</tt>.<a href="http://wiki.fasterxml.com/JsonGenerator">JsonGenerator</a> writes. <span class="anchor" id="line-13"></span></p></li><li><p class="line862">Inspired by the <a class="http" href="http://www.jcp.org/en/jsr/detail?id=173">StAX</a> API. <span class="anchor" id="line-14"></span></p></li></ul></li><li><p class="line891"><a href="http://wiki.fasterxml.com/JacksonTreeModel">Tree Model</a> provides a mutable in-memory tree representation of a JSON document. <span class="anchor" id="line-15"></span></p><ul><li><p class="line891"><tt>org.codehaus.jackson.map</tt>.<a href="http://wiki.fasterxml.com/ObjectMapper">ObjectMapper</a> can build trees; trees consist of <a href="http://wiki.fasterxml.com/JsonNode">JsonNode</a> nodes. <span class="anchor" id="line-16"></span></p></li><li>The tree model is similar to the XML DOM. <span class="anchor" id="line-17"></span></li></ul></li><li><p class="line891"><a href="http://wiki.fasterxml.com/JacksonDataBinding">Data Binding</a> converts JSON to and from POJOs based either on property accessor conventions or annotations. <span class="anchor" id="line-18"></span></p><ul><li><p class="line862">There are <em>two variants</em>: <em>simple</em> and <em>full</em> data binding <span class="anchor" id="line-19"></span></p><ul><li><p class="line891"><strong>Simple data binding</strong> means converting to and from Java Maps, Lists, Strings, Numbers, Booleans and nulls <span class="anchor" id="line-20"></span></p></li><li><p class="line891"><strong>Full data binding</strong> means converting to and from any Java bean type (as well as "simple" types mentioned above) <span class="anchor" id="line-21"></span></p></li></ul></li><li><p class="line891"><tt>org.codehaus.jackson.map</tt>.<a href="http://wiki.fasterxml.com/ObjectMapper">ObjectMapper</a> performs the marshalling  (writing JSON) and unmarshalling (reading JSON) for both variants. <span class="anchor" id="line-22"></span></p></li><li><p class="line862">Inspired by the annotation-based (code-first) variant of <a class="http" href="http://www.jcp.org/en/jsr/detail?id=222">JAXB</a>. <span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span></p></li></ul></li></ul><p class="line874">From usage perspective, one way to summarize these 3 methods is: <span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span></p><ul><li><p class="line891"><a href="http://wiki.fasterxml.com/JacksonStreamingApi">Streaming API</a> is best performing (lowest overhead, fastest read/write; other 2 methods build on it) <span class="anchor" id="line-27"></span></p></li><li><p class="line891"><a href="http://wiki.fasterxml.com/JacksonDataBinding">Data Binding</a> is often most convenient <span class="anchor" id="line-28"></span></p></li><li><p class="line891"><a href="http://wiki.fasterxml.com/JacksonTreeModel">Tree Model</a> is most flexible <span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span></p></li></ul><p class="line862">Given
+ these properties, let's consider these in the reverse order, starting 
+with what is usually the most natural and convenient method for Java 
+developers: <a href="http://wiki.fasterxml.com/JacksonDataBinding">Jackson Data Binding API</a>. <span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span></p><p class="line867">
+</p><h2 id="Examples">Examples</h2>
+<span class="anchor" id="line-33"></span><span class="anchor" id="line-34"></span><p class="line867">
+</p><h3 id="Full_Data_Binding_.28POJO.29_Example">Full Data Binding (POJO) Example</h3>
+<span class="anchor" id="line-35"></span><p class="line862">Jackson's <tt>org.codehaus.jackson.map.ObjectMapper</tt> "just works" for mapping JSON data into plain old Java objects ("POJOs").  For example, given JSON data <span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span></p><p class="line867"><span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span></p><pre>{
+  "name" : { "first" : "Joe", "last" : "Sixpack" },
+  "gender" : "MALE",
+  "verified" : false,
+  "userImage" : "Rm9vYmFyIQ=="
+}</pre><span class="anchor" id="line-45"></span><p class="line862">It takes two lines of Java to turn it into a <tt>User</tt> instance: <span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span></p><p class="line867"><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+function isnumbered(obj) {
+  return obj.childNodes.length && obj.firstChild.childNodes.length && obj.firstChild.firstChild.className == 'LineNumber';
+}
+function nformat(num,chrs,add) {
+  var nlen = Math.max(0,chrs-(''+num).length), res = '';
+  while (nlen>0) { res += ' '; nlen-- }
+  return res+num+add;
+}
+function addnumber(did, nstart, nstep) {
+  var c = document.getElementById(did), l = c.firstChild, n = 1;
+  if (!isnumbered(c))
+    if (typeof nstart == 'undefined') nstart = 1;
+    if (typeof nstep  == 'undefined') nstep = 1;
+    n = nstart;
+    while (l != null) {
+      if (l.tagName == 'SPAN') {
+        var s = document.createElement('SPAN');
+        s.className = 'LineNumber'
+        s.appendChild(document.createTextNode(nformat(n,4,' ')));
+        n += nstep;
+        if (l.childNodes.length)
+          l.insertBefore(s, l.firstChild)
+        else
+          l.appendChild(s)
+      }
+      l = l.nextSibling;
+    }
+  return false;
+}
+function remnumber(did) {
+  var c = document.getElementById(did), l = c.firstChild;
+  if (isnumbered(c))
+    while (l != null) {
+      if (l.tagName == 'SPAN' && l.firstChild.className == 'LineNumber') l.removeChild(l.firstChild);
+      l = l.nextSibling;
+    }
+  return false;
+}
+function togglenumber(did, nstart, nstep) {
+  var c = document.getElementById(did);
+  if (isnumbered(c)) {
+    remnumber(did);
+  } else {
+    addnumber(did,nstart,nstep);
+  }
+  return false;
+}
+</script>
+
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-12a5cc97156d6085afda6dfb1fdc733f31cf0d7b\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-12a5cc97156d6085afda6dfb1fdc733f31cf0d7b', 1, 1);" class="codenumbers">Toggle line numbers</a>
+<pre dir="ltr" id="CA-12a5cc97156d6085afda6dfb1fdc733f31cf0d7b" lang="en"><span class="line"><span class="LineNumber">   1 </span><span class="ID">ObjectMapper</span> <span class="ID">mapper</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">ObjectMapper</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span> <span class="Comment">// can reuse, share globally</span></span>
+<span class="line"><span class="LineNumber">   2 </span><span class="ID">User</span> <span class="ID">user</span> <span class="SPChar">=</span> <span class="ID">mapper</span><span class="SPChar">.</span><span class="ID">readValue</span><span class="SPChar">(</span><span class="ResWord">new</span> <span class="ID">File</span><span class="SPChar">(</span><span class="String">"user.json"</span><span class="SPChar">)</span><span class="SPChar">,</span> <span class="ID">User</span><span class="SPChar">.</span><span class="ResWord">class</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+</pre></div><span class="anchor" id="line-51"></span><p class="line862">Where the <tt>User</tt> class looks something like this (from an<a class="http" href="http://www.cowtowncoder.com/blog/archives/2008/12/entry_121.html">entry</a> on Tatu's blog): <span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span></p><p class="line867"></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-acea469239a48bc6de21e742f9f55e96a4e7cd0f\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-acea469239a48bc6de21e742f9f55e96a4e7cd0f', 1, 1);" class="codenumbers">Toggle line numbers</a>
+<pre dir="ltr" id="CA-acea469239a48bc6de21e742f9f55e96a4e7cd0f" lang="en"><span class="line"><span class="LineNumber">   1 </span><span class="ResWord">public</span> <span class="ResWord">class</span> <span class="ID">User</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">   2 </span>    <span class="ResWord">public</span> <span class="ResWord">enum</span> <span class="ID">Gender</span> <span class="SPChar">{</span> <span class="ID">MALE</span><span class="SPChar">,</span> <span class="ID">FEMALE</span> <span class="SPChar">}</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   3 </span></span>
+<span class="line"><span class="LineNumber">   4 </span>    <span class="ResWord">public</span> <span class="ResWord">static</span> <span class="ResWord">class</span> <span class="ID">Name</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">   5 </span>      <span class="ResWord">private</span> <span class="ID">String</span> <span class="ID">_first</span><span class="SPChar">,</span> <span class="ID">_last</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   6 </span></span>
+<span class="line"><span class="LineNumber">   7 </span>      <span class="ResWord">public</span> <span class="ID">String</span> <span class="ID">getFirst</span><span class="SPChar">(</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ResWord">return</span> <span class="ID">_first</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">   8 </span>      <span class="ResWord">public</span> <span class="ID">String</span> <span class="ID">getLast</span><span class="SPChar">(</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ResWord">return</span> <span class="ID">_last</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">   9 </span></span>
+<span class="line"><span class="LineNumber">  10 </span>      <span class="ResWord">public</span> <span class="ResWord">void</span> <span class="ID">setFirst</span><span class="SPChar">(</span><span class="ID">String</span> <span class="ID">s</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ID">_first</span> <span class="SPChar">=</span> <span class="ID">s</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  11 </span>      <span class="ResWord">public</span> <span class="ResWord">void</span> <span class="ID">setLast</span><span class="SPChar">(</span><span class="ID">String</span> <span class="ID">s</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ID">_last</span> <span class="SPChar">=</span> <span class="ID">s</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  12 </span>    <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  13 </span></span>
+<span class="line"><span class="LineNumber">  14 </span>    <span class="ResWord">private</span> <span class="ID">Gender</span> <span class="ID">_gender</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  15 </span>    <span class="ResWord">private</span> <span class="ID">Name</span> <span class="ID">_name</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  16 </span>    <span class="ResWord">private</span> <span class="ResWord">boolean</span> <span class="ID">_isVerified</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  17 </span>    <span class="ResWord">private</span> <span class="ResWord">byte</span><span class="SPChar">[</span><span class="SPChar">]</span> <span class="ID">_userImage</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  18 </span></span>
+<span class="line"><span class="LineNumber">  19 </span>    <span class="ResWord">public</span> <span class="ID">Name</span> <span class="ID">getName</span><span class="SPChar">(</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ResWord">return</span> <span class="ID">_name</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  20 </span>    <span class="ResWord">public</span> <span class="ResWord">boolean</span> <span class="ID">isVerified</span><span class="SPChar">(</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ResWord">return</span> <span class="ID">_isVerified</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  21 </span>    <span class="ResWord">public</span> <span class="ID">Gender</span> <span class="ID">getGender</span><span class="SPChar">(</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ResWord">return</span> <span class="ID">_gender</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  22 </span>    <span class="ResWord">public</span> <span class="ResWord">byte</span><span class="SPChar">[</span><span class="SPChar">]</span> <span class="ID">getUserImage</span><span class="SPChar">(</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ResWord">return</span> <span class="ID">_userImage</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  23 </span></span>
+<span class="line"><span class="LineNumber">  24 </span>    <span class="ResWord">public</span> <span class="ResWord">void</span> <span class="ID">setName</span><span class="SPChar">(</span><span class="ID">Name</span> <span class="ID">n</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ID">_name</span> <span class="SPChar">=</span> <span class="ID">n</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  25 </span>    <span class="ResWord">public</span> <span class="ResWord">void</span> <span class="ID">setVerified</span><span class="SPChar">(</span><span class="ResWord">boolean</span> <span class="ID">b</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ID">_isVerified</span> <span class="SPChar">=</span> <span class="ID">b</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  26 </span>    <span class="ResWord">public</span> <span class="ResWord">void</span> <span class="ID">setGender</span><span class="SPChar">(</span><span class="ID">Gender</span> <span class="ID">g</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ID">_gender</span> <span class="SPChar">=</span> <span class="ID">g</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  27 </span>    <span class="ResWord">public</span> <span class="ResWord">void</span> <span class="ID">setUserImage</span><span class="SPChar">(</span><span class="ResWord">byte</span><span class="SPChar">[</span><span class="SPChar">]</span> <span class="ID">b</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="ID">_userImage</span> <span class="SPChar">=</span> <span class="ID">b</span><span class="SPChar">;</span> <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  28 </span><span class="SPChar">}</span></span>
+</pre></div><a class="attachment" href="http://wiki.fasterxml.com/JacksonInFiveMinutes?action=AttachFile&amp;do=view&amp;target=User.java" title="attachment:User.java">User.java</a> <span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span><p class="line874">Marshalling back to JSON is similarly straightforward: <span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span></p><p class="line867"><span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span></p><pre>mapper.writeValue(new File("user-modified.json"), user);</pre><span class="anchor" id="line-60"></span><p class="line862">For fancier data binding (e.g., unmarshalling formatted dates into <tt>java.util.Date</tt>), Jackson provides annotations to customize the marshalling and unmarshalling process. <span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span></p><p class="line867">
+</p><h3 id="A.22Raw.22_Data_Binding_Example">"Raw" Data Binding Example</h3>
+<span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span><p class="line874">(also known as "Untyped", or sometimes "simple" data binding) <span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span></p><p class="line862">In
+ cases where you do not have (and don't want to create) specific Java 
+classes to bind JSON to/from, "Untyped data binding" may be a better 
+approach. It is used same way as full data binding, except that the 
+formal binding type is specified simply as <strong>Object.class</strong> (or <strong>Map.class</strong>, <strong>List.class</strong>, <strong>String[].class</strong> if more specific typing is wanted). So the earlier binding of JSON that represent User data could have been done by: <span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span></p><p class="line867"><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span></p><pre>Map&lt;String,Object&gt; userData = mapper.readValue(new File("user.json"), Map.class);</pre><span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><p class="line874">and userData would be like one we would explicit construct by: <span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span></p><p class="line867"><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-3464d4ca49fa778ec1b36bc057dba9bee17ba60d\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-3464d4ca49fa778ec1b36bc057dba9bee17ba60d', 1, 1);" class="codenumbers">Toggle line numbers</a>
+<pre dir="ltr" id="CA-3464d4ca49fa778ec1b36bc057dba9bee17ba60d" lang="en"><span class="line"><span class="LineNumber">   1 </span><span class="ID">Map</span><span class="SPChar">&lt;</span><span class="ID">String</span><span class="SPChar">,</span><span class="ID">Object</span><span class="SPChar">&gt;</span> <span class="ID">userData</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">HashMap</span><span class="SPChar">&lt;</span><span class="ID">String</span><span class="SPChar">,</span><span class="ID">Object</span><span class="SPChar">&gt;</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   2 </span><span class="ID">Map</span><span class="SPChar">&lt;</span><span class="ID">String</span><span class="SPChar">,</span><span class="ID">String</span><span class="SPChar">&gt;</span> <span class="ID">nameStruct</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">HashMap</span><span class="SPChar">&lt;</span><span class="ID">String</span><span class="SPChar">,</span><span class="ID">String</span><span class="SPChar">&gt;</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   3 </span><span class="ID">nameStruct</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"first"</span><span class="SPChar">,</span> <span class="String">"Joe"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   4 </span><span class="ID">nameStruct</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"last"</span><span class="SPChar">,</span> <span class="String">"Sixpack"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   5 </span><span class="ID">userData</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"name"</span><span class="SPChar">,</span> <span class="ID">nameStruct</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   6 </span><span class="ID">userData</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"gender"</span><span class="SPChar">,</span> <span class="String">"MALE"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   7 </span><span class="ID">userData</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"verified"</span><span class="SPChar">,</span> <span class="ID">Boolean</span><span class="SPChar">.</span><span class="ID">FALSE</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   8 </span><span class="ID">userData</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"userImage"</span><span class="SPChar">,</span> <span class="String">"Rm9vYmFyIQ=="</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+</pre></div><span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span><p class="line874">This
+ obviously works both ways: if you did construct such a Map (or bind 
+from JSON and modify), you could write out just as before, by: <span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span></p><p class="line867"><span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span></p><pre>mapper.writeValue(new File("user-modified.json"), userData);</pre><span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span><p class="line862">How does this work? By specifying <tt>Map.class</tt>, we do not specify generic key/value types. But <tt>ObjectMapper</tt>
+ does know how to bind JSON data to and from Maps (and Lists, arrays, 
+wrapper types), and does just that. Fundamentally JSON data has no 
+"real" type as far as Jackson is concerned -- if it can be properly 
+mapped to a type you give, it will be mapped. <span class="anchor" id="line-92"></span><span class="anchor" id="line-93"></span></p><p class="line874">Concrete Java types that Jackson will use for simple data binding are: <span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span></p><div><table><tbody><tr>  <td><p class="line862"> <strong>JSON Type</strong> </p></td>
+  <td><p class="line862"> <strong>Java Type<em> </em></strong></p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-96"></span><p class="line891"><tt>object</tt> </p></td>
+  <td><p class="line891"><tt>LinkedHashMap&lt;String,Object&gt;</tt> </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-97"></span><p class="line891"><tt>array</tt> </p></td>
+  <td><p class="line891"><tt>ArrayList&lt;Object&gt;</tt> </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-98"></span><p class="line891"><tt>string</tt> </p></td>
+  <td><p class="line891"><tt>String</tt> </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-99"></span><p class="line891"><tt>number&nbsp;(no&nbsp;fraction)</tt> </p></td>
+  <td><p class="line862"> <tt>Integer</tt>, <tt>Long</tt> or <tt>BigInteger</tt> (smallest applicable) </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-100"></span><p class="line891"><tt>number&nbsp;(fraction)</tt> </p></td>
+  <td><p class="line862"> <tt>Double</tt> (configurable to use <tt>BigDecimal</tt>) </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-101"></span><p class="line891"><tt>true|false</tt> </p></td>
+  <td><p class="line891"><tt>Boolean</tt> </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-102"></span><p class="line891"><tt>null</tt> </p></td>
+  <td><p class="line891"><tt>null</tt> </p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-103"></span><span class="anchor" id="line-104"></span><p class="line867">
+</p><h3 id="Data_Binding_with_Generics">Data Binding with Generics</h3>
+<span class="anchor" id="line-105"></span><span class="anchor" id="line-106"></span><p class="line874">In
+ addition to binding to POJOs and "simple" types, there is one 
+additional variant: that of binding to generic (typed) containers. <span class="anchor" id="line-107"></span>This
+ case requires special handling due to so-called Type Erasure (used by 
+Java to implement generics in somewhat backwards compatible way), which 
+prevents you from using something like <tt>Collection&lt;String&gt;.class</tt> (which does not compile). <span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span></p><p class="line862">So if you want to bind data into a <tt>Map&lt;String,User&gt;</tt> you will need to use: <span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span></p><p class="line867"><span class="anchor" id="line-112"></span><span class="anchor" id="line-113"></span></p><pre>  Map&lt;String,User&gt; result = mapper.readValue(src, new TypeReference&lt;Map&lt;String,User&gt;&gt;() { });</pre><span class="anchor" id="line-114"></span><span class="anchor" id="line-115"></span><p class="line862">where <tt>TypeReference</tt> is only needed to pass generic type definition (via anynomous inner class in this case): the important part is <tt>&lt;Map&lt;String,User&gt;&gt;</tt> which defines type to bind to. <span class="anchor" id="line-116"></span><span class="anchor" id="line-117"></span></p><p class="line862">If you don't do this (and just pass <tt>Map.class</tt>), call is equivalent to binding to <tt>Map&lt;?,?&gt;</tt> (i.e. "untyped" Map), as explained above. <span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span></p><p class="line862">UPDATE: As an alternative, <a href="http://wiki.fasterxml.com/JacksonRelease13">version 1.3</a> also allows programmatic construction of types by using <tt>TypeFactory</tt>. <span class="anchor" id="line-120"></span><span class="anchor" id="line-121"></span></p><p class="line867">
+</p><h3 id="Tree_Model_Example">Tree Model Example</h3>
+<span class="anchor" id="line-122"></span><p class="line862">Yet another
+ way to get Objects out of JSON is to build a tree. This is similar to 
+DOM trees for XML. The way Jackson builds trees is to use basic <tt>JsonNode</tt>
+ base class, which exposes read access that is usually needed. Actual 
+node types used are sub-classes; but the sub-type only needs to be used 
+when modifying trees. <span class="anchor" id="line-123"></span><span class="anchor" id="line-124"></span></p><p class="line862">Trees can be read and written using either Streaming API (see below), or using <tt>ObjectMapper</tt>. <span class="anchor" id="line-125"></span><span class="anchor" id="line-126"></span></p><p class="line862">With <tt>ObjectMapper</tt>, you will do something like: <span class="anchor" id="line-127"></span><span class="anchor" id="line-128"></span></p><p class="line867"><span class="anchor" id="line-129"></span><span class="anchor" id="line-130"></span><span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span><span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span><span class="anchor" id="line-135"></span><span class="anchor" id="line-136"></span><span class="anchor" id="line-137"></span><span class="anchor" id="line-138"></span><span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-6aeb206798b571e9a6b710d4179c3ca5e8ee1e53\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-6aeb206798b571e9a6b710d4179c3ca5e8ee1e53', 1, 1);" class="codenumbers">Toggle line numbers</a>
+<pre dir="ltr" id="CA-6aeb206798b571e9a6b710d4179c3ca5e8ee1e53" lang="en"><span class="line"><span class="LineNumber">   1 </span><span class="ID">ObjectMapper</span> <span class="ID">m</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">ObjectMapper</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   2 </span><span class="Comment">// can either use mapper.readTree(source), or mapper.readValue(source, JsonNode.class);</span></span>
+<span class="line"><span class="LineNumber">   3 </span><span class="ID">JsonNode</span> <span class="ID">rootNode</span> <span class="SPChar">=</span> <span class="ID">m</span><span class="SPChar">.</span><span class="ID">readTree</span><span class="SPChar">(</span><span class="ResWord">new</span> <span class="ID">File</span><span class="SPChar">(</span><span class="String">"user.json"</span><span class="SPChar">)</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   4 </span><span class="Comment">// ensure that "last name" isn't "Xmler"; if is, change to "Jsoner"</span></span>
+<span class="line"><span class="LineNumber">   5 </span><span class="ID">JsonNode</span> <span class="ID">nameNode</span> <span class="SPChar">=</span> <span class="ID">rootNode</span><span class="SPChar">.</span><span class="ID">path</span><span class="SPChar">(</span><span class="String">"name"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   6 </span><span class="ID">String</span> <span class="ID">lastName</span> <span class="SPChar">=</span> <span class="ID">nameNode</span><span class="SPChar">.</span><span class="ID">path</span><span class="SPChar">(</span><span class="String">"last"</span><span class="SPChar">)</span><span class="SPChar">.</span><span class="ID">getTextValue</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">.</span></span>
+<span class="line"><span class="LineNumber">   7 </span><span class="ResWord">if</span> <span class="SPChar">(</span><span class="String">"xmler"</span><span class="SPChar">.</span><span class="ID">equalsIgnoreCase</span><span class="SPChar">(</span><span class="ID">lastName</span><span class="SPChar">)</span><span class="SPChar">)</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">   8 </span>  <span class="SPChar">(</span><span class="SPChar">(</span><span class="ID">ObjectNode</span><span class="SPChar">)</span><span class="ID">nameNode</span><span class="SPChar">)</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"last"</span><span class="SPChar">,</span> <span class="String">"Jsoner"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   9 </span><span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  10 </span><span class="Comment">// and write it out:</span></span>
+<span class="line"><span class="LineNumber">  11 </span><span class="ID">m</span><span class="SPChar">.</span><span class="ID">writeValue</span><span class="SPChar">(</span><span class="ResWord">new</span> <span class="ID">File</span><span class="SPChar">(</span><span class="String">"user-modified.json"</span><span class="SPChar">)</span><span class="SPChar">,</span> <span class="ID">rootNode</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+</pre></div><span class="anchor" id="line-141"></span><span class="anchor" id="line-142"></span><p class="line874">Or if you want to construct a Tree (for the User example) from scratch, you can do: <span class="anchor" id="line-143"></span><span class="anchor" id="line-144"></span></p><p class="line867"><span class="anchor" id="line-145"></span><span class="anchor" id="line-146"></span><span class="anchor" id="line-147"></span><span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span><span class="anchor" id="line-150"></span><span class="anchor" id="line-151"></span><span class="anchor" id="line-152"></span><span class="anchor" id="line-153"></span><span class="anchor" id="line-154"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-9564d456287f1aeefd64f6f8d0ed1634b8ed033d\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-9564d456287f1aeefd64f6f8d0ed1634b8ed033d', 1, 1);" class="codenumbers">Toggle line numbers</a>
+<pre dir="ltr" id="CA-9564d456287f1aeefd64f6f8d0ed1634b8ed033d" lang="en"><span class="line"><span class="LineNumber">   1 </span><span class="ID">TreeMapper</span> <span class="ID">treeMapper</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">TreeMapper</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   2 </span><span class="ID">ObjectNode</span> <span class="ID">userOb</span> <span class="SPChar">=</span> <span class="ID">treeMapper</span><span class="SPChar">.</span><span class="ID">objectNode</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   3 </span><span class="ID">Object</span> <span class="ID">nameOb</span> <span class="SPChar">=</span> <span class="ID">userRoot</span><span class="SPChar">.</span><span class="ID">putObject</span><span class="SPChar">(</span><span class="String">"name"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   4 </span><span class="ID">nameOb</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"first"</span><span class="SPChar">,</span> <span class="String">"Joe"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   5 </span><span class="ID">nameOb</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"last"</span><span class="SPChar">,</span> <span class="String">"Sixpack"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   6 </span><span class="ID">userOb</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"gender"</span><span class="SPChar">,</span> <span class="ID">User</span><span class="SPChar">.</span><span class="ID">Gender</span><span class="SPChar">.</span><span class="ID">MALE</span><span class="SPChar">.</span><span class="ID">toString</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   7 </span><span class="ID">userOb</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"verified"</span><span class="SPChar">,</span> <span class="ConsWord">false</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   8 </span><span class="ResWord">byte</span><span class="SPChar">[</span><span class="SPChar">]</span> <span class="ID">imageData</span> <span class="SPChar">=</span> <span class="ID">getImageData</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span> <span class="Comment">// or wherever it comes from</span></span>
+<span class="line"><span class="LineNumber">   9 </span><span class="ID">userOb</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"userImage"</span><span class="SPChar">,</span> <span class="ID">imageData</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+</pre></div><span class="anchor" id="line-155"></span><span class="anchor" id="line-156"></span><p class="line862">(NOTE: with Jackson 1.2 you can use <a href="http://wiki.fasterxml.com/ObjectMapper">ObjectMapper</a> directly, using <a href="http://wiki.fasterxml.com/ObjectMapper">ObjectMapper</a>.createObjectNode() to create userOb -- above example will work with JAckson 1.0 and 1.1) <span class="anchor" id="line-157"></span><span class="anchor" id="line-158"></span></p><p class="line867">
+</p><h3 id="Streaming_API_Example">Streaming API Example</h3>
+<span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span><p class="line874">And
+ finally, there is the third way: turbo-charged, high-performance method
+ known as Streaming API (aka incremental mode, since content is read and
+ written incrementally). <span class="anchor" id="line-161"></span><span class="anchor" id="line-162"></span></p><p class="line874">Just
+ for fun, let's implement the writing functionality (equivalent to 
+earlier examples) using "raw" Streaming API: WriteJSON.java <span class="anchor" id="line-163"></span><span class="anchor" id="line-164"></span></p><p class="line867"><span class="anchor" id="line-165"></span><span class="anchor" id="line-166"></span><span class="anchor" id="line-167"></span><span class="anchor" id="line-168"></span><span class="anchor" id="line-169"></span><span class="anchor" id="line-170"></span><span class="anchor" id="line-171"></span><span class="anchor" id="line-172"></span><span class="anchor" id="line-173"></span><span class="anchor" id="line-174"></span><span class="anchor" id="line-175"></span><span class="anchor" id="line-176"></span><span class="anchor" id="line-177"></span><span class="anchor" id="line-178"></span><span class="anchor" id="line-179"></span><span class="anchor" id="line-180"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-4e6c0f0771efea168f721b3a0ab8fada0e9b5e92\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-4e6c0f0771efea168f721b3a0ab8fada0e9b5e92', 1, 1);" class="codenumbers">Toggle line numbers</a>
+<pre dir="ltr" id="CA-4e6c0f0771efea168f721b3a0ab8fada0e9b5e92" lang="en"><span class="line"><span class="LineNumber">   1 </span><span class="ID">JsonFactory</span> <span class="ID">f</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">JsonFactory</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   2 </span><span class="ID">JsonGenerator</span> <span class="ID">g</span> <span class="SPChar">=</span> <span class="ID">f</span><span class="SPChar">.</span><span class="ID">createJsonGenerator</span><span class="SPChar">(</span><span class="ResWord">new</span> <span class="ID">File</span><span class="SPChar">(</span><span class="String">"user.json"</span><span class="SPChar">)</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   3 </span></span>
+<span class="line"><span class="LineNumber">   4 </span><span class="ID">g</span><span class="SPChar">.</span><span class="ID">writeStartObject</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   5 </span><span class="ID">g</span><span class="SPChar">.</span><span class="ID">writeObjectFieldStart</span><span class="SPChar">(</span><span class="String">"name"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   6 </span><span class="ID">g</span><span class="SPChar">.</span><span class="ID">writeStringField</span><span class="SPChar">(</span><span class="String">"first"</span><span class="SPChar">,</span> <span class="String">"Joe"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   7 </span><span class="ID">g</span><span class="SPChar">.</span><span class="ID">writeStringField</span><span class="SPChar">(</span><span class="String">"last"</span><span class="SPChar">,</span> <span class="String">"Sixpack"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   8 </span><span class="ID">g</span><span class="SPChar">.</span><span class="ID">writeEndObject</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span> <span class="Comment">// for field 'name'</span></span>
+<span class="line"><span class="LineNumber">   9 </span><span class="ID">g</span><span class="SPChar">.</span><span class="ID">writeStringField</span><span class="SPChar">(</span><span class="String">"gender"</span><span class="SPChar">,</span> <span class="ID">Gender</span><span class="SPChar">.</span><span class="ID">MALE</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  10 </span><span class="ID">g</span><span class="SPChar">.</span><span class="ID">writeBooleanField</span><span class="SPChar">(</span><span class="String">"verified"</span><span class="SPChar">,</span> <span class="ConsWord">false</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  11 </span><span class="ID">g</span><span class="SPChar">.</span><span class="ID">writeFieldName</span><span class="SPChar">(</span><span class="String">"userImage"</span><span class="SPChar">)</span><span class="SPChar">;</span> <span class="Comment">// no 'writeBinaryField' (yet?)</span></span>
+<span class="line"><span class="LineNumber">  12 </span><span class="ResWord">byte</span><span class="SPChar">[</span><span class="SPChar">]</span> <span class="ID">binaryData</span> <span class="SPChar">=</span> <span class="SPChar">.</span><span class="SPChar">.</span><span class="SPChar">.</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  13 </span><span class="ID">g</span><span class="SPChar">.</span><span class="ID">writeBinary</span><span class="SPChar">(</span><span class="ID">binaryData</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  14 </span><span class="ID">g</span><span class="SPChar">.</span><span class="ID">writeEndObject</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  15 </span><span class="ID">g</span><span class="SPChar">.</span><span class="ID">close</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span> <span class="Comment">// important: will force flushing of output, close underlying output stream</span></span>
+</pre></div><span class="anchor" id="line-181"></span><p class="line874">Not
+ horribly bad (esp. compared to amount of work needed for writing, say, 
+equivalent XML content), but certainly more laborious than basic Object 
+mapping. <span class="anchor" id="line-182"></span><span class="anchor" id="line-183"></span></p><p class="line862">On
+ the other hand, you do have full control over each and every detail. 
+And overhead is minimal: this is still a bit faster than using <tt>ObjectMapper</tt>;
+ not a whole lot (perhaps 20-30% faster in common cases), but still. And
+ perhaps most importantly, output is done in streaming manner: except 
+for some buffering, all content will be written out right away. This 
+means that memory usage is also minimal. <span class="anchor" id="line-184"></span><span class="anchor" id="line-185"></span></p><p class="line874">How about parsing, then? Code could look something like: <span class="anchor" id="line-186"></span><span class="anchor" id="line-187"></span></p><p class="line867"><span class="anchor" id="line-188"></span><span class="anchor" id="line-189"></span><span class="anchor" id="line-190"></span><span class="anchor" id="line-191"></span><span class="anchor" id="line-192"></span><span class="anchor" id="line-193"></span><span class="anchor" id="line-194"></span><span class="anchor" id="line-195"></span><span class="anchor" id="line-196"></span><span class="anchor" id="line-197"></span><span class="anchor" id="line-198"></span><span class="anchor" id="line-199"></span><span class="anchor" id="line-200"></span><span class="anchor" id="line-201"></span><span class="anchor" id="line-202"></span><span class="anchor" id="line-203"></span><span class="anchor" id="line-204"></span><span class="anchor" id="line-205"></span><span class="anchor" id="line-206"></span><span class="anchor" id="line-207"></span><span class="anchor" id="line-208"></span><span class="anchor" id="line-209"></span><span class="anchor" id="line-210"></span><span class="anchor" id="line-211"></span><span class="anchor" id="line-212"></span><span class="anchor" id="line-213"></span><span class="anchor" id="line-214"></span><span class="anchor" id="line-215"></span><span class="anchor" id="line-216"></span><span class="anchor" id="line-217"></span><span class="anchor" id="line-218"></span><span class="anchor" id="line-219"></span><span class="anchor" id="line-220"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-08e201cd0ea646f9828312e6deba88f533335743\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-08e201cd0ea646f9828312e6deba88f533335743', 1, 1);" class="codenumbers">Toggle line numbers</a>
+<pre dir="ltr" id="CA-08e201cd0ea646f9828312e6deba88f533335743" lang="en"><span class="line"><span class="LineNumber">   1 </span><span class="ID">JsonFactory</span> <span class="ID">f</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">JsonFactory</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   2 </span><span class="ID">JsonParser</span> <span class="ID">jp</span> <span class="SPChar">=</span> <span class="ID">f</span><span class="SPChar">.</span><span class="ID">createJsonParser</span><span class="SPChar">(</span><span class="ResWord">new</span> <span class="ID">File</span><span class="SPChar">(</span><span class="String">"user.json"</span><span class="SPChar">)</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   3 </span><span class="ID">User</span> <span class="ID">user</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">User</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   4 </span><span class="ID">jp</span><span class="SPChar">.</span><span class="ID">nextToken</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span> <span class="Comment">// will return JsonToken.START_OBJECT (verify?)</span></span>
+<span class="line"><span class="LineNumber">   5 </span><span class="ResWord">while</span> <span class="SPChar">(</span><span class="ID">jp</span><span class="SPChar">.</span><span class="ID">nextToken</span><span class="SPChar">(</span><span class="SPChar">)</span> <span class="SPChar">!</span><span class="SPChar">=</span> <span class="ID">JsonToken</span><span class="SPChar">.</span><span class="ID">END_OBJECT</span><span class="SPChar">)</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">   6 </span>  <span class="ID">String</span> <span class="ID">fieldname</span> <span class="SPChar">=</span> <span class="ID">jp</span><span class="SPChar">.</span><span class="ID">getCurrentName</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   7 </span>  <span class="ID">jp</span><span class="SPChar">.</span><span class="ID">nextToken</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span> <span class="Comment">// move to value, or START_OBJECT/START_ARRAY</span></span>
+<span class="line"><span class="LineNumber">   8 </span>  <span class="ResWord">if</span> <span class="SPChar">(</span><span class="String">"name"</span><span class="SPChar">.</span><span class="ID">equals</span><span class="SPChar">(</span><span class="ID">fieldname</span><span class="SPChar">)</span><span class="SPChar">)</span> <span class="SPChar">{</span> <span class="Comment">// contains an object</span></span>
+<span class="line"><span class="LineNumber">   9 </span>    <span class="ID">Name</span> <span class="ID">name</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">Name</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  10 </span>    <span class="ResWord">while</span> <span class="SPChar">(</span><span class="ID">jp</span><span class="SPChar">.</span><span class="ID">nextToken</span><span class="SPChar">(</span><span class="SPChar">)</span> <span class="SPChar">!</span><span class="SPChar">=</span> <span class="ID">JsonToken</span><span class="SPChar">.</span><span class="ID">END_OBJECT</span><span class="SPChar">)</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">  11 </span>      <span class="ID">String</span> <span class="ID">namefield</span> <span class="SPChar">=</span> <span class="ID">jp</span><span class="SPChar">.</span><span class="ID">getCurrentName</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  12 </span>      <span class="ID">jp</span><span class="SPChar">.</span><span class="ID">nextToken</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span> <span class="Comment">// move to value</span></span>
+<span class="line"><span class="LineNumber">  13 </span>      <span class="ResWord">if</span> <span class="SPChar">(</span><span class="String">"first"</span><span class="SPChar">.</span><span class="ID">equals</span><span class="SPChar">(</span><span class="ID">namefield</span><span class="SPChar">)</span><span class="SPChar">)</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">  14 </span>        <span class="ID">name</span><span class="SPChar">.</span><span class="ID">setFirst</span><span class="SPChar">(</span><span class="ID">jp</span><span class="SPChar">.</span><span class="ID">getText</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  15 </span>      <span class="SPChar">}</span> <span class="ResWord">else</span> <span class="ResWord">if</span> <span class="SPChar">(</span><span class="String">"last"</span><span class="SPChar">.</span><span class="ID">equals</span><span class="SPChar">(</span><span class="ID">namefield</span><span class="SPChar">)</span><span class="SPChar">)</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">  16 </span>        <span class="ID">name</span><span class="SPChar">.</span><span class="ID">setLast</span><span class="SPChar">(</span><span class="ID">jp</span><span class="SPChar">.</span><span class="ID">getText</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  17 </span>      <span class="SPChar">}</span> <span class="ResWord">else</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">  18 </span>        <span class="ResWord">throw</span> <span class="ResWord">new</span> <span class="ID">IllegalStateException</span><span class="SPChar">(</span><span class="String">"Unrecognized field '"</span><span class="SPChar">+</span><span class="ID">fieldname</span><span class="SPChar">+</span><span class="String">"'!"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  19 </span>      <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  20 </span>    <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  21 </span>    <span class="ID">user</span><span class="SPChar">.</span><span class="ID">setName</span><span class="SPChar">(</span><span class="ID">name</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  22 </span>  <span class="SPChar">}</span> <span class="ResWord">else</span> <span class="ResWord">if</span> <span class="SPChar">(</span><span class="String">"gender"</span><span class="SPChar">.</span><span class="ID">equals</span><span class="SPChar">(</span><span class="ID">fieldname</span><span class="SPChar">)</span><span class="SPChar">)</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">  23 </span>    <span class="ID">user</span><span class="SPChar">.</span><span class="ID">setGender</span><span class="SPChar">(</span><span class="ID">User</span><span class="SPChar">.</span><span class="ID">Gender</span><span class="SPChar">.</span><span class="ID">valueOf</span><span class="SPChar">(</span><span class="ID">jp</span><span class="SPChar">.</span><span class="ID">getText</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">)</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  24 </span>  <span class="SPChar">}</span> <span class="ResWord">else</span> <span class="ResWord">if</span> <span class="SPChar">(</span><span class="String">"verified"</span><span class="SPChar">.</span><span class="ID">equals</span><span class="SPChar">(</span><span class="ID">fieldname</span><span class="SPChar">)</span><span class="SPChar">)</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">  25 </span>    <span class="ID">user</span><span class="SPChar">.</span><span class="ID">setVerified</span><span class="SPChar">(</span><span class="ID">jp</span><span class="SPChar">.</span><span class="ID">getCurrentToken</span><span class="SPChar">(</span><span class="SPChar">)</span> <span class="SPChar">=</span><span class="SPChar">=</span> <span class="ID">JsonToken</span><span class="SPChar">.</span><span class="ID">VALUE_TRUE</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  26 </span>  <span class="SPChar">}</span> <span class="ResWord">else</span> <span class="ResWord">if</span> <span class="SPChar">(</span><span class="String">"userImage"</span><span class="SPChar">.</span><span class="ID">equals</span><span class="SPChar">(</span><span class="ID">fieldname</span><span class="SPChar">)</span><span class="SPChar">)</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">  27 </span>    <span class="ID">user</span><span class="SPChar">.</span><span class="ID">setUserImage</span><span class="SPChar">(</span><span class="ID">jp</span><span class="SPChar">.</span><span class="ID">getBinaryValue</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  28 </span>  <span class="SPChar">}</span> <span class="ResWord">else</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">  29 </span>    <span class="ResWord">throw</span> <span class="ResWord">new</span> <span class="ID">IllegalStateException</span><span class="SPChar">(</span><span class="String">"Unrecognized field '"</span><span class="SPChar">+</span><span class="ID">fieldname</span><span class="SPChar">+</span><span class="String">"'!"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">  30 </span>  <span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  31 </span><span class="SPChar">}</span></span>
+<span class="line"><span class="LineNumber">  32 </span><span class="ID">jp</span><span class="SPChar">.</span><span class="ID">close</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span> <span class="Comment">// ensure resources get cleaned up timely and properly</span></span>
+</pre></div><span class="anchor" id="line-221"></span><p class="line874">which is quite a bit more than you'll use with data binding. <span class="anchor" id="line-222"></span><span class="anchor" id="line-223"></span></p><p class="line862">One final trick: it is also possible to use data binding and tree model directly from <tt>JsonParser</tt> and <tt>JsonGenerator</tt>. To do this, have a look at methods: <span class="anchor" id="line-224"></span><span class="anchor" id="line-225"></span></p><ul><li><p class="line891"><tt>JsonParser.readValueAs()</tt> <span class="anchor" id="line-226"></span></p></li><li><p class="line891"><tt>JsonParser.readValueAsTree()</tt> <span class="anchor" id="line-227"></span></p></li><li><p class="line891"><tt>JsonGenerator.writeObject()</tt> <span class="anchor" id="line-228"></span></p></li><li><p class="line891"><tt>JsonGenerator.writeTree()</tt> <span class="anchor" id="line-229"></span><span class="anchor" id="line-230"></span></p></li></ul><p class="line874">which do about what you might expect them to do. <span class="anchor" id="line-231"></span><span class="anchor" id="line-232"></span></p><p class="line862">The only (?) trick is that you MUST make sure you use <tt>org.codehaus.jackson.map.MappingJsonFactory</tt> for constructing "data-binding capable" parser and generator instances (instead of basic <tt>org.codehaus.jackson.JsonFactory</tt>). <span class="anchor" id="line-233"></span><span class="anchor" id="line-234"></span></p><p class="line867">
+</p><h3 id="Streaming_API_Example_2:_arrays">Streaming API Example 2: arrays</h3>
+<span class="anchor" id="line-235"></span><span class="anchor" id="line-236"></span><p class="line874">(as contributed by Ransom Briggs) <span class="anchor" id="line-237"></span><span class="anchor" id="line-238"></span></p><p class="line874">Let's consider following POJO: <span class="anchor" id="line-239"></span><span class="anchor" id="line-240"></span></p><p class="line867"><span class="anchor" id="line-241"></span><span class="anchor" id="line-242"></span><span class="anchor" id="line-243"></span><span class="anchor" id="line-244"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-c8a04bbbece7d8e7e53055743032910acb48af89\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-c8a04bbbece7d8e7e53055743032910acb48af89', 1, 1);" class="codenumbers">Toggle line numbers</a>
+<pre dir="ltr" id="CA-c8a04bbbece7d8e7e53055743032910acb48af89" lang="en"><span class="line"><span class="LineNumber">   1 </span>  <span class="ResWord">public</span> <span class="ResWord">class</span> <span class="ID">Foo</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">   2 </span>    <span class="ResWord">public</span> <span class="ID">String</span> <span class="ID">foo</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   3 </span>  <span class="SPChar">}</span></span>
+</pre></div><span class="anchor" id="line-245"></span><span class="anchor" id="line-246"></span><p class="line874">and sample JSON stream of: <span class="anchor" id="line-247"></span><span class="anchor" id="line-248"></span></p><p class="line867"><span class="anchor" id="line-249"></span><span class="anchor" id="line-250"></span></p><pre>  String json = [{\"foo\": \"bar\"},{\"foo\": \"biz\"}]";</pre><span class="anchor" id="line-251"></span><span class="anchor" id="line-252"></span><p class="line862">while there are convenient ways to work on this with databinding (see <a href="http://wiki.fasterxml.com/ObjectReader">ObjectReader</a>.<tt>readValues()</tt> for details), you can easily use streaming to iterate over stream, bind individual elements as well: <span class="anchor" id="line-253"></span><span class="anchor" id="line-254"></span></p><p class="line867"><span class="anchor" id="line-255"></span><span class="anchor" id="line-256"></span><span class="anchor" id="line-257"></span><span class="anchor" id="line-258"></span><span class="anchor" id="line-259"></span><span class="anchor" id="line-260"></span><span class="anchor" id="line-261"></span><span class="anchor" id="line-262"></span><span class="anchor" id="line-263"></span><span class="anchor" id="line-264"></span><span class="anchor" id="line-265"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-665d5bca9088ab93129954e2177ac70e8388ea13\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-665d5bca9088ab93129954e2177ac70e8388ea13', 1, 1);" class="codenumbers">Toggle line numbers</a>
+<pre dir="ltr" id="CA-665d5bca9088ab93129954e2177ac70e8388ea13" lang="en"><span class="line"><span class="LineNumber">   1 </span>  <span class="ID">JsonFactory</span> <span class="ID">f</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">JsonFactory</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   2 </span>  <span class="ID">JsonParser</span> <span class="ID">jp</span> <span class="SPChar">=</span> <span class="ID">f</span><span class="SPChar">.</span><span class="ID">createJsonParser</span><span class="SPChar">(</span><span class="ID">json</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   3 </span>  <span class="Comment">// advance stream to START_ARRAY first:</span></span>
+<span class="line"><span class="LineNumber">   4 </span>  <span class="ID">jp</span><span class="SPChar">.</span><span class="ID">nextToken</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   5 </span>  <span class="Comment">// and then each time, advance to opening START_OBJECT</span></span>
+<span class="line"><span class="LineNumber">   6 </span>  <span class="ResWord">while</span> <span class="SPChar">(</span><span class="ID">jp</span><span class="SPChar">.</span><span class="ID">nextToken</span><span class="SPChar">(</span><span class="SPChar">)</span> <span class="SPChar">=</span><span class="SPChar">=</span> <span class="ID">JsonToken</span><span class="SPChar">.</span><span class="ID">START_OBJECT</span><span class="SPChar">)</span><span class="SPChar">)</span> <span class="SPChar">{</span></span>
+<span class="line"><span class="LineNumber">   7 </span>    <span class="ID">Foo</span> <span class="ID">foobar</span> <span class="SPChar">=</span> <span class="ID">mapper</span><span class="SPChar">.</span><span class="ID">readValue</span><span class="SPChar">(</span><span class="ID">jp</span><span class="SPChar">,</span> <span class="ID">Foo</span><span class="SPChar">.</span><span class="ResWord">class</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   8 </span>    <span class="Comment">// process</span></span>
+<span class="line"><span class="LineNumber">   9 </span>    <span class="Comment">// after binding, stream points to closing END_OBJECT</span></span>
+<span class="line"><span class="LineNumber">  10 </span>  <span class="SPChar">}</span></span>
+</pre></div><span class="anchor" id="line-266"></span><span class="anchor" id="line-267"></span><p class="line867">
+</p><h3 id="Next_Steps">Next Steps</h3>
+<span class="anchor" id="line-268"></span><span class="anchor" id="line-269"></span><p class="line862">You may want to check out rest of <a href="http://wiki.fasterxml.com/JacksonDocumentation">JacksonDocumentation</a> for more inspiration. <span class="anchor" id="line-270"></span><span class="anchor" id="line-271"></span></p><p class="line867"></p><hr><p class="line874"> <span class="anchor" id="line-272"></span><a href="http://wiki.fasterxml.com/CategoryJackson">CategoryJackson</a> <span class="anchor" id="line-273"></span><span class="anchor" id="bottom"></span></p></div><p id="pageinfo" class="info" dir="ltr" lang="en">JacksonInFiveMinutes  (last edited 2012-10-17 18:28:59 by <span title="TatuSaloranta @ nat-204-14-239-210-sfo.net.salesforce.com[204.14.239.210]"><a href="http://wiki.fasterxml.com/TatuSaloranta" title="TatuSaloranta @ nat-204-14-239-210-sfo.net.salesforce.com[204.14.239.210]">TatuSaloranta</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+<div><p style="color: #808080; padding-right: 15px; font-size: smaller; text-align: right;">Copyright ©2009 <a href="http://fasterxml.com/">FasterXML, LLC</a></p></div>
+
+<div id="footer">
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://wiki.fasterxml.com/JacksonInFiveMinutes?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://wiki.fasterxml.com/JacksonInFiveMinutes?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/JacksonInFiveMinutes">
+<div>
+    
+    <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option selected="selected" value="show">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="disabled" class="disabled">Rename Page</option>
+<option value="DeletePage" disabled="disabled" class="disabled">Delete Page</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Subscribe User</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Remove Spam</option>
+<option value="show" disabled="disabled" class="disabled">Revert to this revision</option>
+<option value="show" disabled="disabled" class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="JacksonInFiveMinutes%20-%20FasterXML%20Wiki_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-140287-9");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+</body></html>

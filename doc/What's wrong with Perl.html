@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>What's wrong with Perl</title>
+  <meta name="Author" content="Lars Marius Garshol">
+  <meta name="Generator" content="Homemade">
+  <meta name="Description" content="An article that attempts to explain what the author considers
+      wrong about Perl, and presents a realistic alternative.">
+  <meta name="Keywords" content="Perl, Python, scripting, scripting languages, programming,
+      programming languages, CGI programming">
+  <link rel="stylesheet" href="What%27s%20wrong%20with%20Perl_files/standard.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<h1>What's wrong with Perl</h1>
+
+<p class="author"><a href="http://www.garshol.priv.no/">By: Lars Marius Garshol
+  </a></p>
+
+<p><a href="http://webhostingrating.com/libs/perl-be">Belorussian 
+translation</a>, by Bohdan Zograf.</p>
+
+<h2>Contents</h2><ul><li><a href="#id1.">Before we start</a><ul></ul></li><li><a href="#id2.">Getting to know the Camel</a><ul></ul></li><li><a href="#id3.">Getting to dislike the Camel</a><ul><li><a href="#id3.1.">Illegible syntax</a><ul><li><a href="#id3.1.1.">Programmers and readability</a><ul></ul></li></ul></li><li><a href="#id3.2.">Too many special constructs</a><ul></ul></li><li><a href="#id3.3.">Hard to build data structures</a><ul></ul></li><li><a href="#id3.4.">Defining interfaces</a><ul></ul></li><li><a href="#id3.5.">Not really object-oriented</a><ul></ul></li><li><a href="#id3.6.">Summing it up</a><ul></ul></li></ul></li><li><a href="#id4.">Discovering the Python</a><ul></ul></li><li><a href="#id5.">Falling in love with the Python</a><ul><li><a href="#id5.1.">The standard libraries</a><ul></ul></li><li><a href="#id5.2.">The SIGs</a><ul></ul></li><li><a href="#id5.3.">Python software</a><ul></ul></li><li><a href="#id5.4.">Is it really any better than Perl?</a><ul><li><a href="#id5.4.1.">Readability</a><ul></ul></li><li><a href="#id5.4.2.">Documentation</a><ul></ul></li><li><a href="#id5.4.3.">Built-ins</a><ul></ul></li><li><a href="#id5.4.4.">Data structures</a><ul></ul></li></ul></li></ul></li><li><a href="#id6.">Parting shot</a><ul><li><a href="#id6.1.">What other people think</a><ul></ul></li><li><a href="#id6.2.">A final warning</a><ul></ul></li></ul></li><li><a href="#id7.">Appendices</a><ul><li><a href="#id7.1.">Acknowledgements</a><ul></ul></li></ul></li></ul><h2><a name="id1.">Before we start</a></h2><p>Just a note before you continue: this is based on my personal
+experience with Perl. I know other people have other opinions of this
+language and they are welcome to them. I just want to present mine,
+because I see lots of messages on Usenet from people who seem to be
+about to learn Perl and I keep wanting to tell them that perhaps it's
+not a good idea. So, I wrote this article to get this off my chest
+once and for all.</p><p>If you think that anything in this article is objectively wrong, then
+please email me about it. I'd like this article to be as factually
+correct as possible. If you just disagree with me you can tell me that
+too. </p><p>I should perhaps explain why I refer to Perl as "the Camel": the Bible
+on all things Perl is Larry Walls "Programming Perl", which is
+published by O'Reilly. O'Reilly usually puts a nice 19th century
+engraving of an animal on the cover of their books. "Programming Perl"
+got a camel and has been known as "the camel book" ever since. Larry
+Wall also often refers to Perl as the camel.</p><p>The article should be up to date as of Python 1.5.2 and Perl 5.005.
+If anything has changed since those versions, feel free to tell me
+about it.</p><h2><a name="id2.">Getting to know the Camel</a></h2><p>I learned Perl 5 in early '97. I downloaded <a href="http://www.geek-girl.com/perl/SAG-perl.ps">Patrick M. Ryans
+excellent introduction to Perl</a> and found that a lot of the things
+I'd been doing the hard way with C, Pascal and Java were much much
+easier in Perl. For text processing and access to system functions
+Perl looked like a real God-send. Great, I thought, and bought myself
+"Learning Perl", by Randal Schwartz. (Also known as the "llama
+book".)</p><p>I read it pretty quickly and sucked up all these wonderful new
+features. The first program I made read a web server log and counted
+the number of times each page had been accessed. I wrote it in half an
+hour and it worked immediately! Not only did it work, but Perl also
+seemed to be able to overlook unimportant errors instead of crashing
+or aborting like C/Pascal/Java programs would.</p>
+<p>(That program was released in many versions, and had quite a few
+users. So Perl isn't useless, just inconvenient.)</p>
+<h2><a name="id3.">Getting to dislike the Camel</a></h2><p>I was really enchanted with this language and started using it more
+and more. However, as I kept using it I kept discovering new things I
+didn't like. After a while it added up to a pretty sizable list.</p><h3><a name="id3.1.">Illegible syntax</a></h3><blockquote><p>Though I'll admit readability suffers slightly... </p><p class="origin">--Larry Wall in <a href="http://groups.google.com/groups?as_umsgid=2969%40jato.Jpl.Nasa.Gov">&lt;2969@jato.Jpl.Nasa.Gov&gt;</a></p></blockquote><p>One of the first things I discovered I didn't like was the syntax.
+It's very complex and there are <em>lots</em> of operators and special
+syntaxes. This means that you get short, but complex code with many
+syntax errors that take some time to sort out.</p><p>It also means that reading someone elses code is difficult. You can't
+easily understand someone elses scripts and adapt them to your own
+needs, nor can you easily take over the maintenance of someone elses
+program. </p><p>I write pretty clean Perl code, because I stay away from most of
+the obfuscating features, but even so it gets pretty hard to
+read. This is one ordinary example:
+</p><pre><code>foreach $Key (@SearchEngines) {
+    if ($fields[11] =~ /$Key/i) {
+	  $HitFrom[4]++;           #Yes, search engine
+	  $SEReferrals{$SENames{$Key}}++;
+	  $PageRefs{$fields[6]}{$SENames{$Key}}++;
+	  $found=1;
+	  last;
+    }
+}</code></pre><p></p><p>It's not even a particularly bad example. Here's a function from the
+Perl distribution that produces <a href="http://www.netcentral.co.uk/%7Ewjh/soundex.html">a Soundex
+value</a>
+ from a name or word:
+</p><pre><code>sub soundex
+{
+  local (@s, $f, $fc, $_) = @_;
+
+  push @s, '' unless @s;	# handle no args as a single empty string
+
+  foreach (@s)
+  {
+    tr/a-z/A-Z/;
+    tr/A-Z//cd;
+
+    if ($_ eq '')
+    {
+      $_ = $soundex_nocode;
+    }
+    else
+    {
+      ($f) = /^(.)/;
+      tr/AEHIOUWYBFPVCGJKQSXZDTLMNR/00000000111122222222334556/;
+      ($fc) = /^(.)/;
+      s/^$fc+//;
+      tr///cs;
+      tr/0//d;
+      $_ = $f . $_ . '000';
+      s/^(.{4}).*/$1/;
+    }
+  }
+
+  wantarray ? @s : shift @s;
+}</code></pre><p></p><p>However, even this isn't really bad. The Perl Journal has conducted an
+Obfuscated Perl contest. The winners are <a href="http://orwant.www.media.mit.edu/tpj/programs/Issue_03_Obfuscated/">here</a>
+.
+Be warned, though. These programs gives the word unreadable entirely
+new and previously unimagined meanings. (And no, this isn't an
+argument for Perl being unreadable, but mainly included as a funny and
+curious item.)</p><h4><a name="id3.1.1.">Programmers and readability</a></h4><p>Some people reading this have complained that 'But anyone can write
+unreadable code in any language!' and this is certainly true. However,
+some languages seem to encourage hard-to-read code, while others seem
+to discourage it.</p><p>From what I have seen of my own and other people's code Perl really
+encourages hard-to-read programs. The Soundex example above comes from
+the Perl distribution and was found by just randomly looking through 2
+or 3 files. Looking through it again now I see many other examples
+(like lib/pod/text.pm and lib/file/copy.pm), even though most scripts
+are too short to be hard to read.</p><p>Some have argued that Perl is more like natural languages than most
+programming languages, and this certainly seems correct to me. And to
+me that is a disadvantage: natural language is extremely complex,
+ambiguous and full of subtle nuances and meanings. I certainly don't
+want my programs to be like that, but it seems that some do. I guess
+the reader will have to find out for him/herself which category s/he
+belongs in.</p><h3><a name="id3.2.">Too many special constructs</a></h3><p>Many of Perl's features are built right into the language core itself,
+instead of being placed in separate libraries. One example of this is
+the handling of regular expressions, for which there is a special
+syntax. This has the advantage that there are some convenient ways of
+doing the things that are done most often, but it also means that you
+don't get the advantages of objects.</p><p>To take one example, Perl has a special construct called formats,
+which are a sort of templates you can use to generate nice textual
+reports. Quite handy, but built into the language. So, you can't
+create a list of formats, return them from functions and so on, which
+will in many cases be a serious inconvenience.</p><p>I think you can do these things with file handles, but since they are
+also handled as special cases I've never been able to figure out how.
+I tried using references, but never made it work.</p><h3><a name="id3.3.">Hard to build data structures</a></h3><p>In the Perl documentation there is a separate manual page for how to
+create arrays within arrays and hashes within hashes. And it's really
+necessary. I had a <em>lot</em> of pain trying to figure out how to do
+this, even after reading it several times. This is something that
+really shook me, because in other languages this is something you just
+do, without thinking about it.</p><p>In Lisp, this sets the variable a to a list: </p><pre><code>(setq a '(1 2 3 4))</code></pre><p></p><p>Here we create list b where the first element is another list:</p><pre><code>(setq b '((0.8 0.9 1) 2 3 4))</code></pre><p></p><p>Here's the first list in Perl: </p><pre><code>@a=(1,2,3,4);</code></pre>
+ <p></p><p>and here's the second: </p><pre><code>@b=((0.8,0.9,1),2,3,4);</code></pre><p></p><p>(The @s before
+the variable names tells Perl that these are array variables.)  That
+wasn't so bad, was it? Well, let's try to use this.</p><p>To pick out the first element of the first list in Lisp, you just
+write </p><pre><code>(first a)</code></pre> <p></p><p>and Lisp gives you </p><pre><code>1</code></pre>
+ <p></p><p>To get the first element of the second list you
+write </p><pre><code>(first b)</code></pre> <p></p><p>and Lisp gives you </p><pre><code>(0.8 0.9 1)</code></pre><p></p><p>Let's try this in Perl. </p><pre><code>$a[0]</code></pre><p></p><p> gives us </p><pre><code>1</code></pre>
+ <p></p><p> The $ before the variable name tells Perl that we
+want a single value (scalar in Perl lingo), not an array. The [0]
+tells Perl that we want the first value of the array. Perl, like many
+other languages and APIs counts from 0.</p><p>Then we do </p><pre><code>$b[0]</code></pre><p></p><p> and Perl happily gives us</p><pre><code>0.8</code></pre>
+ <p></p><p>That's right, Perl has broken into the
+list inside the b list and retrieved the first value of it. Or,
+rather, it flattened b into one list when we created it, so it's now
+really one consecutive list with 6 elements.</p><p>To do this right we should have written </p><pre><code>@b=([(0.8,0.9,1)],2,3,4);</code></pre>
+ <p></p><p>when we created the
+list. The []s enter a reference to the inner list as the first element
+of the outer list instead of flattening the inner list into the outer
+one.</p><p>OK. So we try again: </p><pre><code>$b[0]</code></pre> <p></p><p>gives us</p><pre><code>ARRAY(0xb75eb0)</code></pre>
+ <p></p><p>So obviously we manage to find the
+array, but something still goes wrong along the way. The problem is
+that we use $b, which makes Perl think that we want a scalar and so it
+gives us a reference to the array instead of the array itself (which
+is not a scalar).</p><p>Aha! Of course! We must use </p><pre><code>@b[0]</code></pre> <p></p><p>because @
+tells Perl we want an array value. Not so. We get </p><pre><code>ARRAY(0xb75eb0)</code></pre>
+ <p></p><p>once again. I've never managed to
+understand why this is so and at this point I gave up on the entire
+thing.</p><p>Some weeks later I saw a helpful posting on no.perl: one should
+request a reference to the array, like this </p><pre><code>@{$b[0]}</code></pre>
+ <p></p><p>which actually gives us </p><pre><code>(0.8 0.9 1)</code></pre><p></p><p>So now I can write code with arrays
+inside arrays and hashes inside hashes.</p><p>Now, ask yourself: do you really think you should have to go through
+all this in order to put one list inside another?</p><h3><a name="id3.4.">Defining interfaces</a></h3><p>Another major disadvantage to Perl is that of function (or subroutine,
+in Perl lingo) signatures, or rather, the lack of signatures. In most
+programming languages when you declare a function you also declare its
+signature, listing the names of the parameters and in some languages
+also their types. Perl doesn't do this.</p><p>So what in Java is
+</p><pre><code>public String substring(String str, int from, int to) {</code></pre><p></p><p>becomes
+</p><pre><code>sub substring {
+  local($str, $from, $to) = @_;</code></pre><p></p><p>in Perl. In other words, you have to manually decode the parameter
+list. Perl has lately been extended with the notion of prototypes,
+which means that you can write
+</p><pre><code>sub substring($, $, $) {
+  local($str, $from, $to) = @_;</code></pre><p></p><p>and have Perl check that the number of arguments is correct. This is
+not required, though, and there is much Perl code that does not use
+this syntax.</p><p>The disadvantages don't stop there, though. Many programmers don't
+destructure the parameter array like in the example above, which makes
+the code much harder to read at a glance, and this also makes it
+impossible to automatically generate good documentation.</p><p>And, what's more, you don't get the advantages more advanced languages
+have from features such as keyword arguments (without re-implementing
+them yourself with a hash). For example, when you want to create a
+hash table in Common Lisp you call the make-hash-table function, which
+takes the following keyword arguments:</p><ul><li>test (what function to use to test for key equality),
+  </li><li>size (a suggestion of the number of entries expected),
+  </li><li>rehash-size (hints for rehashing the table),
+  </li><li>rehash-threshold (how full the table can get before being
+  rehashed)</li></ul><p>This means that all of the following invocations will create hash
+tables correctly:
+</p><pre><code>  (make-hash-table)
+  (make-hash-table :test #'eq)
+  (make-hash-table :size 1000)
+  (make-hash-table :rehash-size 2.0 :rehash-threshold 0.7)</code></pre><p></p><p>It also means that you can have function which take a large number of
+parameters (make-array takes 7) and still keep both readability and
+ease of use. You can do the same in Perl, but you are certainly not
+encouraged to, documentation tools won't understand it, readers may
+not either and it certainly isn't convenient compared to the way it is
+in Common Lisp:
+</p><pre><code>(defun make-hash-table(&amp;key test size rehash-size rehash-threshold)</code></pre><p></p><h3><a name="id3.5.">Not really object-oriented</a></h3><p>Although object-orientation is not as fantastic as many would like us
+to think, Perl does support it. However, it does so only
+half-heartedly, since objects were added rather late in the life of
+the language.</p><p>The result of this is that normal files, sockets, hashes and lists are
+not objects, which means that the interfaces to them are not as
+convenient as they could have been. Newer versions of Perl come with
+object-oriented modules with wrappers for these kinds of objects,
+which means that Perl has a protocol for such objects and you can
+write your own implementations of these protocols. However, it also
+means that you need to distinguish between ordinary file handles and
+file objects, which is a bit inconvenient.</p><p>Another thing is the fact that when creating objects you need to
+explicitly manage the internals of your objects. In Perl, object
+creation is manual. A class is declared as a package, and the
+functions in the package then become the methods of the class. To
+create an object, you make a hash table and then bless it (using the
+built-in function 'bless') to make it an object. The 'perlobj' man
+page, which explains the Perl object features, recommends this form of
+object initializer:
+</p><pre><code>package MyClass;
+sub new {
+    my $class = shift;
+    my $self = {};
+    bless $self, $class
+    $self-&gt;initialize();  # do initialization here
+    return $self;
+}</code></pre><p></p><p>There are other ways of doing object initialization, some of which
+cause problems for inheritance. Personally, I find it amazing that
+this sort of thing should be necessary at all. The above is equivalent
+to this Python code:
+</p><pre><code>class MyClass:
+    pass</code></pre><p></p><p>The result is that one can easily get object construction wrong (such
+as by not catering for inheritance), defining classes is awkward and
+it's hard to tell from code when a class is defined (for both human
+readers and software documentation tools).</p><h3><a name="id3.6.">Summing it up</a></h3><p>In general, what this means is that Perl is a large and complex
+language, which takes a long time to learn properly. In my opinion,
+this complexity is unnecessary and a simpler language would have been
+much better. I think this also means that many non-expert Perl
+developers write suboptimal code.</p><p>Another thing is that I think few Perl developers (percentage-wise)
+write general and reusable modules, because you need to learn the
+language well before doing so, something that is relatively hard and
+takes time. Another thing is that the language itself does not
+encourage this.</p><h2><a name="id4.">Discovering the Python</a></h2><blockquote><p>Programming languages teach you not to want what they cannot provide.
+You have to think in a language to write programs in it, and it's hard
+to want something you can't describe. When I first started programming
+- in BASIC - I didn't miss recursion, because I didn't know there was
+such a thing. I thought in BASIC. I could only conceive iterative
+algorithms, so why should I miss recursion?</p><p class="origin">--Paul Graham, ANSI Common Lisp.</p></blockquote><p>So, after discovering all these bad things about Perl, what did I do?
+I kept using it. After all, as bad as it was, it was still better than
+doing text processing and web programming with C, Pascal or Java, and
+there were no better alternatives.</p><p>Or so I thought. At the University bookstore there was this book
+called "Internet Programming with Python". Being both a language freak
+and an internet freak I thought this was interesting and picked it
+up. Somewhere in the beginning of the book there was an anecdote
+about a Python programmer who wrote all his Python programs so that
+when an error occurred (ie: when an exception was thrown) the error
+handler called his beeper.</p><p>Wow, I thought. This sounds interesting. So I went home, found the
+Python tutorial, printed it out and started playing with Python.  That
+night I wrote a POP3 client library in Python. Just like that. After
+going to bed I had an idea: wouldn't it be a lot nicer if I cached the
+messages and made this invisible to the user? In the morning I added
+that in half an hour.</p><p>I've since used this library to delete email without downloading it,
+moving 150 emails from one POP account to another and many other
+things. (Yes, I made a small SMTP library as well.) I can even use it
+as an email client using the Python interpreter as a command line.</p><p>I kept using Python more and more after this. I wrote a link checker
+that went over my web pages checking them for errors and kept adding
+more protocols and features to it. After a while I thought: this
+program spends a lot of time waiting for server responses. Maybe I can
+speed it up by using multi-threading so that it can wait for several
+servers at the same time?</p><p>I'd never really used multithreading before, but knew the theory
+behind it. I added this to the link checker in an hour and that
+includes the digging in the library documentation and removing the few
+bugs I did introduce. (Multithreading is much more complex than it
+sounds at first because things happen simultaneously. That's not
+Python's fault, though.)</p><p>Having read this you may now be convinced that I'm a master
+programmer, rather than that Python is a great programming language
+for this kind of thing. Personally, I don't think this is true.
+(Remember, I'm the guy who can't even make a Perl subroutine return a
+file handle.) Also, from what I hear, many other people have had
+similar experiences with Python. Here's one example:</p><blockquote><p>In my first 15 minutes programming Python I wrote a program which
+would download all the articles in a newsgroup into an mh folder for
+me - and comp.lang.python was my first newsgroup!</p><p class="origin">--Thomas Corbin, in private email to the author</p></blockquote><h2><a name="id5.">Falling in love with the Python</a></h2><h3><a name="id5.1.">The standard libraries</a></h3><p>Did it stop there? It certainly didn't. Since then I've discovered
+these things in the Python libraries:</p><ul><li>Support for serializing objects
+  </li><li>Support for storing serialized objects in simple databases
+  </li><li>A Python parser
+  </li><li>Support for simple text databases (Perl has this too)
+  </li><li>Libraries for ZIP file compression and decompression
+  </li><li>A profiler (and a really nice one too!)
+  </li><li>A CGI library
+  </li><li>A URL parser library
+  </li><li>A general URL connection library
+  </li><li>Simplified HTML, SGML and XML parsers
+  </li><li>A simple web server with CGI support
+  </li><li>POP, IMAP and SMTP libraries (Python 1.5.1; I started with 1.4)</li></ul><p>And these are things that come with the standard Python distribution!
+Perl also has most of this stuff, but it doesn't come with the
+interpreter and the quality of documentation and interfaces varies.</p><p>In Python you not only get these things delivered with the
+interpreter, complete with documentation, they are also extremely
+simple to use and provide exactly the sort of things one commonly
+wants.  Say you're writing a web robot and the robot has the URL to
+the current page in a string (cur_url) and a relative URL from this
+page to the next page in another (next_url) and you want to compute
+the absolute URL of the next page. This is the code:</p><pre><code>next_url=urlparse.urljoin(cur_url,next_url)</code></pre><p>Python also supports GUI programming via Tk on Win32, Mac and Unix.
+It's really easy to install, but not too well documented. There are
+also at many other ways to do GUI programming with Python. (Yes, there
+is for Perl as well.)</p><h3><a name="id5.2.">The SIGs</a></h3><blockquote><p>Python may become as big as Perl or Tcl.  It is more "lovable"
+than those -- though perhaps also more controversial.  It has an
+extremely supportive user community, and that is what will make it big.</p><p class="origin">--Guido van Rossum, creator of Python</p></blockquote><p>When they want to create new libraries or "standards", the Pythoners
+form <a href="http://www.python.org/sigs/">Special Interest Groups</a>
+of volunteers, which anyone can join. Some of the results of this have
+so far been a common API for database modules (which means you can use
+the Sybase module and then exchange it with the Oracle one and only
+change 2 lines of code), an IDL-to-Python mapping for CORBA, a common
+text format for documentation strings and common tools and APIs for
+XML parsing are under development.</p><h3><a name="id5.3.">Python software</a></h3><p>But, if this language really is so great, shouldn't people have
+written some pretty nifty software in it? Well, they have. Here are
+some examples:</p><ul><li><a href="http://www.pythonpros.com/arw/kwParsing/kwParsing.html">kwParsing</a>, a parser generator
+  </li><li><a href="http://www.chordate.com/gadfly.html">Gadfly</a>      , a relational database (yes, in pure Python!)
+  </li><li><a href="http://grail.cnri.reston.va.us/grail/">Grail</a>, a web browser
+  </li><li><a href="http://www.dstc.edu.au/AU/staff/martin-chilvers/Fnorb/">Fnorb</a>, a CORBA ORB
+  </li><li><a href="http://www.cs.colorado.edu/%7Ecarlosm/software.html">Paos</a>,
+      a simple object-oriented database
+  </li><li><a href="http://www.digicool.com/releases/bobo/">Bobo</a>,
+      a system that publishes Python objects through a web
+      server
+  </li><li><a href="http://www.nightmare.com/medusa/">Medusa</a>,
+      a high-performance, extensible Internet server framework.  (Web
+      server, FTP server and chat server built on the same kernel.)</li></ul><p>Personally, my current project in Python is a fully validating <a href="http://www.garshol.priv.no/download/software/xmlproc/">XML
+parser</a>
+.</p><h3><a name="id5.4.">Is it really any better than Perl?</a></h3><p>I've included this section in case you want to know how Python handles
+the things I complained about in Perl.</p><h4><a name="id5.4.1.">Readability</a></h4><p>Python is the most readable language I've ever programmed in. It took
+me half an hour to understand Medusa (even though it's pretty weird in
+concept) and another half-hour to change it so that I could map URL
+paths in the web server to Python functions. An hour after that I
+could read my Gnus mail boxes through the web server. Another hour,
+and I could read news through it.</p><p>Here's my own implementation of the soundex function, written in
+November '97, when I was still new at this:</p><pre><code># no_tbl is an array I've constructed that maps characters to numbers
+# is_letter is written by me, but I've since discovered that Python
+# has it
+
+def soundex(string):
+    """Returns the Soundex code of the string. Characters not A-Z skipped."""
+    string=lower(string)   
+
+    if not is_letter(string[0]): string=string[1:]
+    last=no_tbl[ord(string[0])-97]
+    res =upper(string[0]) # This is where the result will end up
+
+    for char in string[1:]:
+	if is_letter(char):
+	    new=no_tbl[ord(char)-97]
+	    if (new!="0" and new!=last):
+		res=res+new
+	    last=new
+
+    if len(res)&lt;4:
+	return res+"0"*(4-len(res))
+    else:
+	return res[:4]</code></pre><h4><a name="id5.4.2.">Documentation</a></h4><p>There is a Python program that generates javadoc-like documentation
+from the documentation strings in Python programs. It can produce
+output in HTML, plain text and FrameMaker format. </p><p>As for the standard library documentation, you can <a href="http://www.python.org/doc/lib/lib.html">see for yourself</a>
+.</p><p>Turning off output buffering isn't blindingly obvious, but not too
+difficult, either. You pretty quickly learn that sys.stdout, sys.stdin
+and sys.stderr are file objects that represent standard out, standard
+in and standard error. So, since stdout is an ordinary file object, it
+should behave as one with respect to output buffering as well. And it
+does. These objects have no methods to turn off buffering, but you can
+flush data with the flush method: </p><pre><code>sys.stdout.flush()</code></pre><p></p><p>If you find that awkward there is a command-line switch for the
+interpreter that lets you turn off buffering. However, you have to run
+the interpreter with 'python -?' to find this out, so I couldn't
+really claim that this is too well documented.</p><h4><a name="id5.4.3.">Built-ins</a></h4><p>Python has very few built-in features compared to Perl. Regular
+expressions come in a separate module and are implemented as objects.
+Here's a list of compiled regular expressions:</p><pre><code>reg_list=[re.compile("foo"),re.compile("[Bb][Aa][Rr]"),re.compile("ba[z]")]</code></pre><p>Files are also objects, as are Python modules and most other things.
+This means that you can pass them as parameters, stuff them in lists,
+subclass them and even create classes with the same methods and use
+them where code expects to see a file object or a module.</p><h4><a name="id5.4.4.">Data structures</a></h4><p>This is the two list examples in Python, (=&gt; shows what the results
+are):</p><pre><code>a=[1,2,3,4]
+a[0]                  =&gt; 1
+b=[[0.8,0.9,1],2,3,4]
+b[0]                  =&gt; [0.8,0.9,1]</code></pre><p>Python also has hash tables, tuples (fixed-length lists) and full
+object-orientation.</p><h2><a name="id6.">Parting shot</a></h2><h3><a name="id6.1.">What other people think</a></h3>
+<p>You may want to hear what other people think as well, so here are
+some links to other opinions on Perl and Python:</p>
+
+<ul>
+<li><a href="http://www.prescod.net/python/why.html">Why I love
+Python</a>, some Python propaganda by Paul Prescod.</li>
+<li>Keith Waclena writes about his search for good programming
+languages in <a href="http://www.lib.uchicago.edu/keith/crisis/">My Programming
+Language Crisis</a>,
+</li><li><a href="http://www.python.org/doc/langquest.html">A Tale of Five
+Languages</a> tells about James Logajan's evaluation of five scripting
+languages for an embedded project,
+</li><li>Eric S. Raymond explains why he prefers Python in <a href="http://www.linuxjournal.com/article.php?sid=3882">Why Python?</a>,
+</li><li>Sam Holden has written <a href="http://www.cs.usyd.edu.au/%7Esholden/pythonperl.html">an annotated version</a> of this article, with comments about
+things he disagrees with. (Note: I've updated the article since Sam
+wrote his version.)
+</li>
+</ul>
+
+<h3><a name="id6.2.">A final warning</a></h3><blockquote><p>Camels are docile when properly trained and handled but, especially in
+the rutting season, are liable to fits of rage.  They spit when
+annoyed and can bite and kick dangerously.</p><p class="origin">--Encyclopedia Britannica.</p></blockquote><p>If after all this, you still want to use Perl, then be my guest and go
+right ahead. I'm not going to stop you. You have been warned, though.</p><p>However, you may perhaps be curious about what the Encyclopedia
+Britannica has to say about Pythons? Here it is:</p><blockquote><p>...the Monty Python Flying Circus troupe, which set a standard during the
+1970s for its quirky parodies and wacky humour on television and later
+in films.</p><p class="origin">--Encyclopedia Britannica</p></blockquote><p>That's right. Python was named after a comedy troupe, not after a nasty
+reptile. This is why there are so many weird names and examples in the
+Python tutorials and source code. :-)</p><h2><a name="id7.">Appendices</a></h2><h3><a name="id7.1.">Acknowledgements</a></h3><p>Thanks to:</p><ul><li><a href="http://s9412a.steinan.ntnu.no/%7Eteg/">Trond Eivind 
+      Glomsrød</a> for pointing out a typo (and not flaming me for writing
+      this article).
+  </li><li>Kjell Arne Rekaa for pointing out a hard-to-spot typo and for
+      being almost convinced.
+  </li><li>Robin Friedrich for pointing out two typos and linking to this
+      article from <a href="http://www.python.org/">the Python site</a>.
+  </li><li><a href="http://www.qucis.queensu.ca/home/phillips/">Greg
+      Phillips</a> for pointing out a hard-to-spot Lisp typo.
+  </li><li><a href="http://www.nvg.ntnu.no/%7Esk/">Steinar Knutsen</a>      for telling me that the Python interpreter has a command-line option
+      for turning off buffering.
+  </li><li><a href="http://www.onsight.com/james/">James Lee</a> for
+      pointing out a typo in my sample Perl code.
+  </li><li>Thomas Corbin for pointing out yet another typo and unintentionally 
+      providing me with a nice quote.
+  </li><li>Ronald J. Kimball for some thoughtful criticism.
+  </li><li><a href="http://www.zeuscat.com/andrew/">Andrew Ho</a>  for very open-minded and useful criticism, and for giving Python a
+try.  </li>
+<li>Georg Bisseling, for pointing out several broken links.
+</li></ul>
+
+<hr>
+
+<address>
+Last update 2002-01-16.
+</address>
+
+
+
+
+
+</body></html>

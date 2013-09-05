@@ -1,0 +1,13 @@
+{
+ "1" :  { "type" : "drink", "name" : "Pepsi", "description" : "Classic Cola (500 kcal)" },
+ "2" :  { "type" : "drink", "name" : "Diet Pepsi", "description" : "Cola (10 kcal)" },
+ "3" :  { "type" : "drink", "name" : "Sprite", "description" : "Carbonated citrus drink (300 kcal) Caffinee free" },
+ "4" :  { "type" : "drink", "name" : "Coca-Cola", "description" : "Classic Cola (500 kcal)" }, 
+ "5" :  { "type" : "drink", "name" : "Diet Coke", "description" : "Diet Cola drink (10 kcal)" }, 
+ "6" :  { "type" : "snack", "name" : "Potato Crisps", "description" : "Classic crisps (440 kcal)" }, 
+ "7" :  { "type" : "snack", "name" : "BBQ Crisps", "description" : "BBQ flavoured crisps (480 kcal)" }, 
+ "8" :  { "type" : "snack", "name" : "Doritos", "description" : "Artificially flavoured crisps (440 kcal)" }, 
+ "9" :  { "type" : "snack", "name" : "Cheese Crackers", "description" : "Real cheese cracker sandwiches (240 kcal)" }, 
+ "10" : { "type" : "snack", "name" : "Honey Bun", "description" : "Honey-glazed bread roll (675 kcal)" }
+}
+ 

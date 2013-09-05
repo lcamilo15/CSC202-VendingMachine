@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<location version="1.0" name="NOVA">
+<machine id="1" type="drink">
+	<dispenser slot="1">
+		<item>1</item>
+		<quantity>5</quantity>
+		<price>1.50</price>
+	</dispenser>
+	<dispenser slot="2">
+		<item>1</item>
+		<quantity>5</quantity>
+		<price>1.50</price>
+	</dispenser>
+	<dispenser slot="3">
+		<item>2</item>
+		<quantity>5</quantity>
+		<price>1.50</price>
+	</dispenser>
+	<dispenser slot="4">
+		<item>2</item>
+		<quantity>5</quantity>
+		<price>1.50</price>
+	</dispenser>
+	<dispenser slot="5">
+		<item>3</item>
+		<quantity>5</quantity>
+		<price>1.50</price>
+	</dispenser>
+	<dispenser slot="6">
+		<item>3</item>
+		<quantity>5</quantity>
+		<price>1.50</price>
+	</dispenser>
+	<dispenser slot="7">
+		<item>4</item>
+		<quantity>5</quantity>
+		<price>1.50</price>
+	</dispenser>
+	<dispenser slot="8">
+		<item>4</item>
+		<quantity>5</quantity>
+		<price>1.50</price>
+	</dispenser>
+	<dispenser slot="9">
+		<item>5</item>
+		<quantity>5</quantity>
+		<price>1.50</price>
+	</dispenser>
+	<dispenser slot="10">
+		<item>5</item>
+		<quantity>5</quantity>
+		<price>1.50</price>
+	</dispenser>	
+</machine>
+<machine id="2" type="snack">
+	<dispenser slot="1">
+		<item>6</item>
+		<quantity>10</quantity>
+		<price>0.85</price>
+	</dispenser>
+	<dispenser slot="2">
+		<item>7</item>
+		<quantity>15</quantity>
+		<price>0.85</price>
+	</dispenser>
+	<dispenser slot="3">
+		<item>8</item>
+		<quantity>15</quantity>
+		<price>1.00</price>
+	</dispenser>
+	<dispenser slot="4">
+		<item>9</item>
+		<quantity>20</quantity>
+		<price>0.65</price>
+	</dispenser>
+	<dispenser slot="5">
+		<item>10</item>
+		<quantity>15</quantity>
+		<price>0.75</price>
+	</dispenser>
+</machine>

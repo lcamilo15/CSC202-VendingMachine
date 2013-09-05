@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<supplier vendor="vendor" version="1.0">
+<stock>
+  <item type="drink" id="1">
+ 	<name>Pepsi</name>
+ 	<description>Classic Cola (500 kcal)</description>
+  </item>
+  <item type="drink" id="2">
+ 	<name>Diet Pepsi</name>
+ 	<description>Diet Cola (10 kcal)</description>
+  </item>
+  <item  type="drink" id="3">
+        <name>Sprite</name>
+ 	<description>Carbonated citrus drink (300 kcal) Caffinee free</description>
+  </item>
+  <item type="drink" id="4">
+ 	<name>Coca-Cola</name>
+ 	<description>Classic Cola (500 kcal)</description>
+  </item>
+  <item type="drink" id="5">
+ 	<name>Diet Coke</name>
+ 	<description>Diet Cola drink (10 kcal)</description>
+  </item>
+  
+  <item type="snack" id="6">
+ 	<name>Potato Crisps</name>
+ 	<description>Classic crisps (440 kcal)</description>
+  </item>
+  <item type="snack" id="7">
+ 	<name>BBQ Crisps</name>
+ 	<description>BBQ flavoured crisps (480 kcal)</description>
+  </item>
+  <item type="snack" id="8">
+ 	<name>Doritos</name>
+ 	<description>Artificially flavoured crisps (440 kcal)</description>
+  </item>
+  <item type="snack" id="9">
+ 	<name>Cheese Crackers</name>
+ 	<description>Real cheese cracker sandwiches (240 kcal)</description>
+  </item>
+  <item type="snack" id="10">
+ 	<name>Honey Bun</name>
+ 	<description>Honey-glazed bread roll (675 kcal)</description>
+  </item>
+</stock>
+</supplier>

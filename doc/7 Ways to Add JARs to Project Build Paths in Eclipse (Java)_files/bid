@@ -1,0 +1,17 @@
+function amzn_ads(data) { 
+        window.amzn_ads = data.ads;
+        try {
+           document.amzn_slots = new Array();
+           var arrayIndex = 0;
+	   for(var slot in data.ads) {
+             document.amzn_slots[arrayIndex++] = slot; 
+	   }
+        } catch(e) {}
+}
+function amzn_render(doc, slot) {
+        try {
+	  var ad = window.top.amzn_ads[slot];
+	  if(ad!=null) doc.writeln(ad);
+        } catch(e) {}
+}
+amzn_ads({"ads":{"a300x250p3":"<iframe src=\"http://aax-us-east.amazon-adsystem.com/e/dtb/impi?b=c21232b3-1233-4937-a4fa-0b8813d5250a&ps=a300x250p3&rnd=406031\" width=\"300\" height=\"250\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\"><\/iframe>","a300x250p1":"<iframe src=\"http://aax-us-east.amazon-adsystem.com/e/dtb/impi?b=c21232b3-1233-4937-a4fa-0b8813d5250a&ps=a300x250p1&rnd=406031\" width=\"300\" height=\"250\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\"><\/iframe>","a300x250p2":"<iframe src=\"http://aax-us-east.amazon-adsystem.com/e/dtb/impi?b=c21232b3-1233-4937-a4fa-0b8813d5250a&ps=a300x250p2&rnd=406031\" width=\"300\" height=\"250\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\"><\/iframe>"},"status":"ok"})

@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>JacksonTreeModel - FasterXML Wiki</title>
+<script type="text/javascript" src="JacksonTreeModel%20-%20FasterXML%20Wiki_files/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="JacksonTreeModel%20-%20FasterXML%20Wiki_files/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="JacksonTreeModel%20-%20FasterXML%20Wiki_files/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="JacksonTreeModel%20-%20FasterXML%20Wiki_files/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="JacksonTreeModel%20-%20FasterXML%20Wiki_files/projection.css">
+
+<!-- css only for MSIE browsers -->
+<!--[if IE]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static183/modern/css/msie.css">
+<![endif]-->
+
+
+
+
+
+<link rel="Start" href="http://wiki.fasterxml.com/Home">
+<link rel="Alternate" title="Wiki Markup" href="http://wiki.fasterxml.com/JacksonTreeModel?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="http://wiki.fasterxml.com/JacksonTreeModel?action=print">
+<link rel="Search" href="http://wiki.fasterxml.com/FindPage">
+<link rel="Index" href="http://wiki.fasterxml.com/TitleIndex">
+<link rel="Glossary" href="http://wiki.fasterxml.com/WordIndex">
+<link rel="Help" href="http://wiki.fasterxml.com/HelpOnFormatting">
+</head>
+
+<body dir="ltr" lang="en">
+
+<div id="header">
+<div id="logo"><a href="http://wiki.fasterxml.com/Home"><img src="JacksonTreeModel%20-%20FasterXML%20Wiki_files/fxml_logo_72_75.png" alt="FasterXML Logo"></a></div>
+
+<form id="searchform" method="get" action="/JacksonTreeModel">
+<div>
+<input name="action" value="fullsearch" type="hidden">
+<input name="context" value="180" type="hidden">
+<label style="display: none;" for="searchinput">Search:</label>
+<input class="disabled" id="searchinput" name="value" value="Search" size="20" onfocus="searchFocus(this)" onblur="searchBlur(this)" onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search" type="text">
+<input disabled="disabled" id="titlesearch" name="titlesearch" value="Titles" alt="Search Titles" type="submit">
+<input disabled="disabled" id="fullsearch" name="fullsearch" value="Text" alt="Search Full Text" type="submit">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<ul id="username"><li><a href="http://wiki.fasterxml.com/JacksonTreeModel?action=login" id="login" rel="nofollow">Login</a></li></ul>
+<div id="locationline">
+
+
+<ul id="pagelocation">
+<li><a class="backlink" href="http://wiki.fasterxml.com/JacksonTreeModel?action=fullsearch&amp;context=180&amp;value=linkto%3A%22JacksonTreeModel%22" rel="nofollow" title="Click to do a full-text search for this title">JacksonTreeModel</a></li>
+</ul>
+
+</div>
+
+
+<ul id="navibar">
+<li class="wikilink"><a href="http://wiki.fasterxml.com/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="http://wiki.fasterxml.com/FindPage">FindPage</a></li><li class="wikilink"><a href="http://wiki.fasterxml.com/HelpContents">HelpContents</a></li><li class="current"><a href="http://wiki.fasterxml.com/JacksonTreeModel">JacksonTreeModel</a></li>
+</ul>
+
+<div id="pageline"><hr style="display:none;"></div>
+
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://wiki.fasterxml.com/JacksonTreeModel?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://wiki.fasterxml.com/JacksonTreeModel?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/JacksonTreeModel">
+<div>
+    
+    <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option selected="selected" value="show">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="disabled" class="disabled">Rename Page</option>
+<option value="DeletePage" disabled="disabled" class="disabled">Delete Page</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Subscribe User</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Remove Spam</option>
+<option value="show" disabled="disabled" class="disabled">Revert to this revision</option>
+<option value="show" disabled="disabled" class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+
+<div id="page" dir="ltr" lang="en">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+</p><h2 id="Processing_model:_Tree_Model">Processing model: Tree Model</h2>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line862">Of 3 major processing modes that <a href="http://wiki.fasterxml.com/JacksonHome">Jackson</a>
+ supports, Tree Model may be most familiar to developers with experience
+ using XML as the main data/transfer format. At conceptual level it has 
+many similarities to <a class="http" href="http://en.wikipedia.org/wiki/Document_Object_Model">DOM</a> XML tree model; although there are also many differences due to structural and semantic differences between JSON and XML. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span></p><p class="line867">
+</p><h3 id="Constructing_Trees_from_JSON_content">Constructing Trees from JSON content</h3>
+<span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line862">Trees are usually constructed using <tt>ObjectMapper</tt>, similar to how <a href="http://wiki.fasterxml.com/JacksonDataBinding">Data Binding</a> is done. There are actually two distinct methods for doing this: <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span></p><p class="line867"><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+function isnumbered(obj) {
+  return obj.childNodes.length && obj.firstChild.childNodes.length && obj.firstChild.firstChild.className == 'LineNumber';
+}
+function nformat(num,chrs,add) {
+  var nlen = Math.max(0,chrs-(''+num).length), res = '';
+  while (nlen>0) { res += ' '; nlen-- }
+  return res+num+add;
+}
+function addnumber(did, nstart, nstep) {
+  var c = document.getElementById(did), l = c.firstChild, n = 1;
+  if (!isnumbered(c))
+    if (typeof nstart == 'undefined') nstart = 1;
+    if (typeof nstep  == 'undefined') nstep = 1;
+    n = nstart;
+    while (l != null) {
+      if (l.tagName == 'SPAN') {
+        var s = document.createElement('SPAN');
+        s.className = 'LineNumber'
+        s.appendChild(document.createTextNode(nformat(n,4,' ')));
+        n += nstep;
+        if (l.childNodes.length)
+          l.insertBefore(s, l.firstChild)
+        else
+          l.appendChild(s)
+      }
+      l = l.nextSibling;
+    }
+  return false;
+}
+function remnumber(did) {
+  var c = document.getElementById(did), l = c.firstChild;
+  if (isnumbered(c))
+    while (l != null) {
+      if (l.tagName == 'SPAN' && l.firstChild.className == 'LineNumber') l.removeChild(l.firstChild);
+      l = l.nextSibling;
+    }
+  return false;
+}
+function togglenumber(did, nstart, nstep) {
+  var c = document.getElementById(did);
+  if (isnumbered(c)) {
+    remnumber(did);
+  } else {
+    addnumber(did,nstart,nstep);
+  }
+  return false;
+}
+</script>
+
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-6acd921f812124a86e0744dd980265e48befafbb\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-6acd921f812124a86e0744dd980265e48befafbb', 1, 1);" class="codenumbers">Toggle line numbers</a>
+<pre dir="ltr" id="CA-6acd921f812124a86e0744dd980265e48befafbb" lang="en"><span class="line"><span class="LineNumber">   1 </span>  <span class="Comment">// general method, same as with data binding</span></span>
+<span class="line"><span class="LineNumber">   2 </span>  <span class="ID">ObjectMapper</span> <span class="ID">mapper</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">ObjectMapper</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   3 </span>  <span class="Comment">// (note: can also use more specific type, like ArrayNode or ObjectNode!)</span></span>
+<span class="line"><span class="LineNumber">   4 </span>  <span class="ID">JsonNode</span> <span class="ID">rootNode</span> <span class="SPChar">=</span> <span class="ID">mapper</span><span class="SPChar">.</span><span class="ID">readValue</span><span class="SPChar">(</span><span class="ID">src</span><span class="SPChar">,</span> <span class="ID">JsonNode</span><span class="SPChar">.</span><span class="ResWord">class</span><span class="SPChar">)</span><span class="SPChar">;</span> <span class="Comment">// src can be a File, URL, InputStream etc</span></span>
+<span class="line"><span class="LineNumber">   5 </span></span>
+<span class="line"><span class="LineNumber">   6 </span>  <span class="Comment">// or, with dedicated method; requires a JsonParser instance</span></span>
+<span class="line"><span class="LineNumber">   7 </span>  <span class="ID">JsonParser</span> <span class="ID">jp</span> <span class="SPChar">=</span> <span class="SPChar">.</span><span class="SPChar">.</span><span class="SPChar">.</span><span class="SPChar">;</span> <span class="Comment">// construct using JsonFactory (can get one using ObjectMapper.getJsonFactory)</span></span>
+<span class="line"><span class="LineNumber">   8 </span>  <span class="ID">rootNode</span> <span class="SPChar">=</span> <span class="ID">mapper</span><span class="SPChar">.</span><span class="ID">readTree</span><span class="SPChar">(</span><span class="ID">jp</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   9 </span>  <span class="Comment">// (most useful when binding sub-trees)</span></span>
+</pre></div><span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span><p class="line867">
+</p><h3 id="Traversing_Tree_Model">Traversing Tree Model</h3>
+<span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><p class="line862">Basic <tt>JsonNode</tt>
+ interface has most accessor methods (although none of methods to change
+ tree). For basic traversal, there are separate methods for JSON Objects
+ and Arrays -- Objects are indexed by property name, Arrays by element 
+index. In addition, it is possible to use "safe" methods which will 
+return dummy <tt>MissingNode</tt> instead of null if Object/Array does not contain indicated value. <span class="anchor" id="line-24"></span>Methods available thus are: <span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span></p><ul><li><p class="line891"><tt>JsonNode</tt> get(int index) : for Arrays, returns child element at 'index' (indexes are 0-based), if one exists <span class="anchor" id="line-27"></span></p><ul><li>If index is outside of array size (less than 0, greater or equal than array size), returns null <span class="anchor" id="line-28"></span></li><li><p class="line862">If node is not a <tt>ArrayNode</tt>, returns null <span class="anchor" id="line-29"></span></p></li><li><p class="line862">JSON Null values will be of type <tt>NullNode</tt>, NOT Java nulls (since null indicates value not existing) <span class="anchor" id="line-30"></span></p></li></ul></li><li><p class="line891"><tt>JsonNode</tt> get(String property) : for Objects, returns value of property named 'property', if one exists <span class="anchor" id="line-31"></span></p><ul><li>If no such property exists, returns null <span class="anchor" id="line-32"></span></li><li><p class="line862">If node is not an <tt>ObjectNode</tt>, returns null <span class="anchor" id="line-33"></span></p></li><li><p class="line862">JSON Null values will be of type <tt>NullNode</tt>, NOT Java nulls (since null indicates value not existing) <span class="anchor" id="line-34"></span></p></li></ul></li><li><p class="line891"><tt>JsonNode</tt> path(int index), <tt>JsonNode</tt>
+ path(String property) : Similar to 'get(int)' and 'get(String)' 
+methods; but instead of returning Java null for missing values, will 
+return <tt>MissingNode</tt> <span class="anchor" id="line-35"></span></p><ul><li><p class="line862">Benefit of <tt>MissingNode</tt> is that it implements all <tt>JsonNode</tt> methods as expected: never has any value, but can be further traversed (resulting always in a <tt>MissingNode</tt>). <span class="anchor" id="line-36"></span></p></li><li>Very
+ useful in safe traversal: if data is there, will be traversed; if not, 
+will eventually result in missing data. This can be considered similar 
+to SQL NULL value. <span class="anchor" id="line-37"></span></li></ul></li><li><p class="line891"><tt>JsonNode</tt> with(int index) : Similar to 'path(String)' methods; but instead of returning <tt>MissingNode</tt>, will actually <strong>create and add</strong> new <tt>ObjectNode</tt> <span class="anchor" id="line-38"></span></p><ul><li>Very useful for safe modifications: you can "materialize" sub-trees as necessary <span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span></li></ul></li></ul><p class="line874">So considering following JSON document: <span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span></p><p class="line867"><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span></p><pre>  {
+    "array" : [ 1, { "name" : "Billy" }, null ],
+    "object" : { "id" : 123, "names" : [ "Bob", "Bobby" ]  }
+  }</pre><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><p class="line874">as 'root' we could access information using methods like: <span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span></p><p class="line867"><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span></p><pre>  JsonNode array = root.get("array"); // would return null if none found
+  // let's use "path()" -- if no such element, will return MissingNode which can be dereferenced!
+  String name = array.path(1).getValueAsText(); // or, getTextValue if it's certain it is JSON String
+  String id = root.path("object").path("id").getTextValue(); // so it'll be null if not found
+  // or
+  JsonNode idNode = root.path("object").path("id"); // never returns null
+  if (idNode.isMissingNode()) {
+    throw new IllegalArgumentException("Could not find id!");
+  }
+
+  // or maybe we just want to traverse all values of properties of the array node?
+  for (JsonNode node : root.path("array")) {
+    System.out.println("Entry: "+node.toString());
+  }</pre><span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><p class="line874">Even better, we could also do: <span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span></p><p class="line867"><span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span></p><pre>  root.with("object").with("attrs").put("firstAttribute", 1);</pre><span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><p class="line874">and tree being modified to look like: <span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span></p><p class="line867"><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span><span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span></p><pre>  {
+    "array" : [ 1, { "name" : "Billy" }, null ],
+    "object" : {
+      "id" : 123,
+      "names" : [ "Bob", "Bobby" ],
+      "attrs" : { "firstAttribute" : 1 }
+    }
+  }</pre><span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span><p class="line874">which is much more convenient than having to check for existence (or lack thereof) along the path. <span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span></p><p class="line862">Note that the main difference between <tt>path()</tt> and <tt>with()</tt> therefore is that former works well with read-access, and latter works better when modifying things. <span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span></p><p class="line867"><strong>TO BE COMPLETED</strong> <span class="anchor" id="line-92"></span><span class="anchor" id="line-93"></span></p><p class="line874">(what else should be added here?) <span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span></p><p class="line867">
+</p><h3 id="Constructing_Tree_Model_instances_from_Scratch">Constructing Tree Model instances from Scratch</h3>
+<span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span><p class="line874">It is also possible to construct tree instances without external JSON source. <span class="anchor" id="line-98"></span><span class="anchor" id="line-99"></span></p><p class="line874">For example: <span class="anchor" id="line-100"></span><span class="anchor" id="line-101"></span></p><p class="line867"><span class="anchor" id="line-102"></span><span class="anchor" id="line-103"></span><span class="anchor" id="line-104"></span><span class="anchor" id="line-105"></span><span class="anchor" id="line-106"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-57ee9193bdd08db42b1ba8f64cc7e4be7f04545e\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-57ee9193bdd08db42b1ba8f64cc7e4be7f04545e', 1, 1);" class="codenumbers">Toggle line numbers</a>
+<pre dir="ltr" id="CA-57ee9193bdd08db42b1ba8f64cc7e4be7f04545e" lang="en"><span class="line"><span class="LineNumber">   1 </span>  <span class="ID">ObjectMapper</span> <span class="ID">mapper</span> <span class="SPChar">=</span> <span class="ResWord">new</span> <span class="ID">ObjectMapper</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   2 </span>  <span class="ID">JsonNode</span> <span class="ID">rootNode</span> <span class="SPChar">=</span> <span class="ID">mapper</span><span class="SPChar">.</span><span class="ID">createObjectNode</span><span class="SPChar">(</span><span class="SPChar">)</span><span class="SPChar">;</span> <span class="Comment">// will be of type ObjectNode</span></span>
+<span class="line"><span class="LineNumber">   3 </span>  <span class="SPChar">(</span><span class="SPChar">(</span><span class="ID">ObjectNode</span><span class="SPChar">)</span> <span class="ID">rootNode</span><span class="SPChar">)</span><span class="SPChar">.</span><span class="ID">put</span><span class="SPChar">(</span><span class="String">"name"</span><span class="SPChar">,</span> <span class="String">"Tatu"</span><span class="SPChar">)</span><span class="SPChar">;</span></span>
+<span class="line"><span class="LineNumber">   4 </span>  <span class="Comment">// ... and so forth</span></span>
+</pre></div><span class="anchor" id="line-107"></span><span class="anchor" id="line-108"></span><p class="line867">
+</p><h3 id="Writing_Trees_as_JSON">Writing Trees as JSON</h3>
+<span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span><p class="line874">Writing out Trees is done exactly the same way as writing out regular Java objects as JSON; that is: <span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span></p><p class="line867"><span class="anchor" id="line-113"></span><span class="anchor" id="line-114"></span></p><pre>  mapper.writeValue(dst, myBean); // dst can be File, OutputStream, Writer etc</pre><span class="anchor" id="line-115"></span><span class="anchor" id="line-116"></span><p class="line867">
+</p><h3 id="Converting_to_Token_Stream">Converting to Token Stream</h3>
+<span class="anchor" id="line-117"></span><span class="anchor" id="line-118"></span><p class="line862">(note: available since version <a href="http://wiki.fasterxml.com/JacksonRelease13">1.3</a>) <span class="anchor" id="line-119"></span><span class="anchor" id="line-120"></span></p><p class="line862">Assuming you have a <tt>JsonNode</tt>, you can also create a <tt>JsonParser</tt> to traverse its contents as if it was a <a class="nonexistent" href="http://wiki.fasterxml.com/%5BJacksonStreamingApi">token stream</a>] by: <span class="anchor" id="line-121"></span><span class="anchor" id="line-122"></span></p><p class="line867"><span class="anchor" id="line-123"></span><span class="anchor" id="line-124"></span><span class="anchor" id="line-125"></span><span class="anchor" id="line-126"></span></p><pre>  JsonParser jp = node.traverse();
+  // or:
+  JsonParser jp = mapper.treeAsTokens(node);</pre><span class="anchor" id="line-127"></span><span class="anchor" id="line-128"></span><p class="line867">
+</p><h3 id="Converting_to_Java_Objects">Converting to Java Objects</h3>
+<span class="anchor" id="line-129"></span><span class="anchor" id="line-130"></span><p class="line862">(note: available since version <a href="http://wiki.fasterxml.com/JacksonRelease13">1.3</a>) <span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span></p><p class="line874">You
+ can do conversion explicitly by first converting Tree to Token Stream 
+(as above) and then binding; but there is a short-cut too: <span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span></p><p class="line867"><span class="anchor" id="line-135"></span><span class="anchor" id="line-136"></span></p><pre>   MyBean bean = mapper.treeToValue(node, MyBean.class);</pre><span class="anchor" id="line-137"></span><span class="anchor" id="line-138"></span><p class="line867">
+</p><h3 id="Additional_Reading">Additional Reading</h3>
+<span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span><ul><li><p class="line891"><a class="http" href="http://www.cowtowncoder.com/blog/archives/2009/01/entry_153.html">Using Jackson Tree Model</a> (Cowtowncoder Blog) <span class="anchor" id="line-141"></span></p></li><li><p class="line891"><a class="http" href="http://www.cowtowncoder.com/blog/archives/2011/08/entry_460.html">Traversing JSON trees with Jackson</a> (Cowtowncoder Blog) <span class="anchor" id="line-142"></span><span class="anchor" id="line-143"></span></p></li></ul><p class="line867"></p><hr><p class="line874"> <span class="anchor" id="line-144"></span><a href="http://wiki.fasterxml.com/CategoryJackson">CategoryJackson</a> <span class="anchor" id="line-145"></span><span class="anchor" id="bottom"></span></p></div><p id="pageinfo" class="info" dir="ltr" lang="en">JacksonTreeModel  (last edited 2011-12-02 04:19:00 by <span title="TatuSaloranta @ c-24-16-71-87.hsd1.wa.comcast.net[24.16.71.87]"><a href="http://wiki.fasterxml.com/TatuSaloranta" title="TatuSaloranta @ c-24-16-71-87.hsd1.wa.comcast.net[24.16.71.87]">TatuSaloranta</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+<div><p style="color: #808080; padding-right: 15px; font-size: smaller; text-align: right;">Copyright ©2009 <a href="http://fasterxml.com/">FasterXML, LLC</a></p></div>
+
+<div id="footer">
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://wiki.fasterxml.com/JacksonTreeModel?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://wiki.fasterxml.com/JacksonTreeModel?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/JacksonTreeModel">
+<div>
+    
+    <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option selected="selected" value="show">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="disabled" class="disabled">Rename Page</option>
+<option value="DeletePage" disabled="disabled" class="disabled">Delete Page</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Subscribe User</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Remove Spam</option>
+<option value="show" disabled="disabled" class="disabled">Revert to this revision</option>
+<option value="show" disabled="disabled" class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="JacksonTreeModel%20-%20FasterXML%20Wiki_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-140287-9");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+</body></html>
